@@ -1,0 +1,470 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19144,        460]
+NotebookOptionsPosition[     18662,        438]
+NotebookOutlinePosition[     19051,        455]
+CellTagsIndexPosition[     19008,        452]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Module", "[", 
+  RowBox[{
+   RowBox[{"{", "m", "}"}], ",", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Column", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"\"\<slope: \>\"", "<>", 
+         RowBox[{"ToString", "[", 
+          RowBox[{"m", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"expr", "/.", 
+                RowBox[{"x", "\[Rule]", 
+                 RowBox[{"(", 
+                  RowBox[{"xval", "+", "d"}], ")"}]}]}], ")"}], "-", 
+              RowBox[{"(", 
+               RowBox[{"expr", "/.", 
+                RowBox[{"x", "\[Rule]", 
+                 RowBox[{"(", 
+                  RowBox[{"xval", "-", "d"}], ")"}]}]}], ")"}]}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"2", "d"}], ")"}]}]}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Plot", "[", 
+         RowBox[{"expr", ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "min", ",", "max"}], "}"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"400", ",", "Automatic"}], "}"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Epilog", "\[Rule]", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Point", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"xval", "-", "d"}], ",", 
+                RowBox[{"expr", "/.", 
+                 RowBox[{"x", "\[Rule]", 
+                  RowBox[{"(", 
+                   RowBox[{"xval", "-", "d"}], ")"}]}]}]}], "}"}], "]"}], ",",
+              "\[IndentingNewLine]", 
+             RowBox[{"Point", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"xval", "+", "d"}], ",", 
+                RowBox[{"expr", "/.", 
+                 RowBox[{"x", "\[Rule]", 
+                  RowBox[{"(", 
+                   RowBox[{"xval", "+", "d"}], ")"}]}]}]}], "}"}], "]"}], ",",
+              "\[IndentingNewLine]", 
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"xval", "-", "d", "+", "min", "-", "max"}], ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"expr", "/.", 
+                    RowBox[{"x", "\[Rule]", 
+                    RowBox[{"(", 
+                    RowBox[{"xval", "-", "d"}], ")"}]}]}], ")"}], "+", 
+                   RowBox[{"m", 
+                    RowBox[{"(", 
+                    RowBox[{"min", "-", "max"}], ")"}]}]}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"xval", "+", "d", "+", "max", "-", "min"}], ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"expr", "/.", 
+                    RowBox[{"x", "\[Rule]", 
+                    RowBox[{"(", 
+                    RowBox[{"xval", "+", "d"}], ")"}]}]}], ")"}], "+", 
+                   RowBox[{"m", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"max", "-", "min"}], ")"}]}]}]}], "}"}]}], "}"}], 
+              "]"}]}], "\[IndentingNewLine]", "}"}]}]}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"expr", ",", 
+         RowBox[{"x", "^", "2"}], ",", "\"\<function\>\""}], "}"}], ",", 
+       "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"min", ",", 
+         RowBox[{"-", "10"}], ",", "\"\<domain min\>\""}], "}"}], ",", 
+       "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"max", ",", "10", ",", "\"\<domain max\>\""}], "}"}], ",", 
+       "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"xval", ",", "0", ",", "\"\<x mean\>\""}], "}"}], ",", "min", 
+       ",", "max"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"d", ",", "2", ",", "\"\<x distance\>\""}], "}"}], ",", 
+       ".000001", ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{
+         RowBox[{"xval", "-", "min"}], ",", 
+         RowBox[{"max", "-", "xval"}]}], "]"}]}], "}"}]}], 
+    "\[IndentingNewLine]", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5510025618445053`*^9, 3.5510028143310337`*^9}, {
+  3.5510028788577633`*^9, 3.55100293723904*^9}, {3.551002969863264*^9, 
+  3.55100302210247*^9}, {3.55100305488764*^9, 3.5510031384872613`*^9}, {
+  3.551003177112625*^9, 3.5510032490088587`*^9}, {3.5510032922006855`*^9, 
+  3.5510033523757224`*^9}, {3.551003413461402*^9, 3.5510034347694507`*^9}, {
+  3.5510035896006775`*^9, 3.5510036696108627`*^9}, {3.551003700660321*^9, 
+  3.5510037628062334`*^9}, {3.5510037986566553`*^9, 3.5510038482768574`*^9}, {
+  3.5510039369258876`*^9, 3.5510039741444407`*^9}, {3.551004056488807*^9, 
+  3.551004167477327*^9}, {3.551004368658951*^9, 3.5510044283111506`*^9}, {
+  3.5510044638754168`*^9, 3.5510044706717978`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 
+    1.4227206879999996`, $CellContext`expr$$ = $CellContext`x^3, \
+$CellContext`max$$ = 
+    10, $CellContext`min$$ = -10, $CellContext`xval$$ = -5.359999999999999, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`expr$$], $CellContext`x^2, "function"}, ""}, {{
+       Hold[$CellContext`min$$], -10, "domain min"}, ""}, {{
+       Hold[$CellContext`max$$], 10, "domain max"}, ""}, {{
+       Hold[$CellContext`xval$$], 0, "x mean"}, 
+      Dynamic[$CellContext`min$$], 
+      Dynamic[$CellContext`max$$]}, {{
+       Hold[$CellContext`d$$], 2, "x distance"}, 1.*^-6, 
+      Dynamic[
+       Min[$CellContext`xval$$ - $CellContext`min$$, $CellContext`max$$ - \
+$CellContext`xval$$]]}}, Typeset`size$$ = {400., {128.5, 133.5}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`xval$22552$$ = 0, $CellContext`d$22553$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 
+        2, $CellContext`expr$$ = $CellContext`x^2, $CellContext`max$$ = 
+        10, $CellContext`min$$ = -10, $CellContext`xval$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`xval$$, $CellContext`xval$22552$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$22553$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         StringJoin["slope: ", 
+          
+          ToString[$CellContext`m$22551 = (
+             ReplaceAll[$CellContext`expr$$, $CellContext`x -> \
+$CellContext`xval$$ + $CellContext`d$$] - 
+             
+             ReplaceAll[$CellContext`expr$$, $CellContext`x -> \
+$CellContext`xval$$ - $CellContext`d$$])/(2 $CellContext`d$$)]], 
+         Plot[$CellContext`expr$$, {$CellContext`x, $CellContext`min$$, \
+$CellContext`max$$}, PlotRange -> All, ImageSize -> {400, Automatic}, Epilog -> {
+            Point[{$CellContext`xval$$ - $CellContext`d$$, 
+              
+              ReplaceAll[$CellContext`expr$$, $CellContext`x -> \
+$CellContext`xval$$ - $CellContext`d$$]}], 
+            Point[{$CellContext`xval$$ + $CellContext`d$$, 
+              
+              ReplaceAll[$CellContext`expr$$, $CellContext`x -> \
+$CellContext`xval$$ + $CellContext`d$$]}], 
+            
+            Line[{{$CellContext`xval$$ - $CellContext`d$$ + \
+$CellContext`min$$ - $CellContext`max$$, 
+               ReplaceAll[$CellContext`expr$$, $CellContext`x -> \
+$CellContext`xval$$ - $CellContext`d$$] + $CellContext`m$22551 \
+($CellContext`min$$ - $CellContext`max$$)}, {$CellContext`xval$$ + \
+$CellContext`d$$ + $CellContext`max$$ - $CellContext`min$$, 
+               ReplaceAll[$CellContext`expr$$, $CellContext`x -> \
+$CellContext`xval$$ + $CellContext`d$$] + $CellContext`m$22551 \
+($CellContext`max$$ - $CellContext`min$$)}}]}]}], 
+      "Specifications" :> {{{$CellContext`expr$$, $CellContext`x^2, 
+          "function"}, ""}, {{$CellContext`min$$, -10, "domain min"}, 
+         ""}, {{$CellContext`max$$, 10, "domain max"}, 
+         ""}, {{$CellContext`xval$$, 0, "x mean"}, 
+         Dynamic[$CellContext`min$$], 
+         Dynamic[$CellContext`max$$]}, {{$CellContext`d$$, 2, "x distance"}, 
+         1.*^-6, 
+         Dynamic[
+          
+          Min[$CellContext`xval$$ - $CellContext`min$$, $CellContext`max$$ - \
+$CellContext`xval$$]]}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{449., {221., 226.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.5510044286961727`*^9, 3.5510044709946136`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<area: \>\"", "<>", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"Plus", "@@", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"expr", "/.", 
+                RowBox[{"x", "\[Rule]", "#"}]}], "&"}], ")"}], ",", 
+             RowBox[{"Range", "[", 
+              RowBox[{"min", ",", 
+               RowBox[{"max", "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], "]"}]}], 
+            "]"}], 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], ")"}]}], 
+        "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Plot", "[", 
+       RowBox[{"expr", ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "min", ",", "max"}], "}"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"400", ",", "Automatic"}], "}"}]}], ",", 
+        RowBox[{"PlotStyle", "\[Rule]", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Red", ",", "Thick"}], "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Epilog", "\[Rule]", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{"Yellow", ",", 
+           RowBox[{"Opacity", "[", ".25", "]"}], ",", 
+           RowBox[{"EdgeForm", "[", "Thin", "]"}], ",", 
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"Rectangle", "[", 
+                RowBox[{"#", ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"#", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "+", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], ",", 
+                   "0"}], "}"}]}], "]"}], "&"}], ")"}], ",", 
+             RowBox[{"Transpose", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Range", "[", 
+                 RowBox[{"min", ",", 
+                  RowBox[{"max", "-", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], "]"}], 
+                ",", 
+                RowBox[{"Map", "[", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"expr", "/.", 
+                    RowBox[{"x", "\[Rule]", "#"}]}], "&"}], ")"}], ",", 
+                  RowBox[{"Range", "[", 
+                   RowBox[{"min", ",", 
+                    RowBox[{"max", "-", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"max", "-", "min"}], ")"}], "/", "n"}]}], "]"}]}],
+                  "]"}]}], "}"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+          "}"}]}]}], "]"}]}], "\[IndentingNewLine]", "}"}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"expr", ",", 
+       RowBox[{"x", "^", "2"}], ",", "\"\<function\>\""}], "}"}], ",", 
+     "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"min", ",", 
+       RowBox[{"-", "10"}], ",", "\"\<domain min\>\""}], "}"}], ",", 
+     "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"max", ",", "10", ",", "\"\<domain max\>\""}], "}"}], ",", 
+     "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "10", ",", "\"\<rectangles\>\""}], "}"}], ",", "10", 
+     ",", "100"}], "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.5510048977461596`*^9, 3.5510051279665318`*^9}, 
+   3.5510058019030046`*^9, {3.551005895173026*^9, 3.55100592599864*^9}, {
+   3.5510059751693554`*^9, 3.5510060178274584`*^9}, {3.551006107471649*^9, 
+   3.551006137979696*^9}, 3.551006195838519*^9, {3.5510062277862597`*^9, 
+   3.5510062641903143`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`expr$$ = $CellContext`x^3, \
+$CellContext`max$$ = 10, $CellContext`min$$ = -10, $CellContext`n$$ = 10., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`expr$$], $CellContext`x^2, "function"}, ""}, {{
+       Hold[$CellContext`min$$], -10, "domain min"}, ""}, {{
+       Hold[$CellContext`max$$], 10, "domain max"}, ""}, {{
+       Hold[$CellContext`n$$], 10, "rectangles"}, 10, 100}}, 
+    Typeset`size$$ = {400., {128.5, 133.5}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`n$26988$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`expr$$ = $CellContext`x^2, \
+$CellContext`max$$ = 10, $CellContext`min$$ = -10, $CellContext`n$$ = 10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$26988$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         StringJoin["area: ", 
+          ToString[
+           Apply[
+           Plus, Map[ReplaceAll[$CellContext`expr$$, $CellContext`x -> #]& , 
+              
+              Range[$CellContext`min$$, $CellContext`max$$ - \
+($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$, \
+($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$]] \
+(($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$)]]], 
+         Plot[$CellContext`expr$$, {$CellContext`x, $CellContext`min$$, \
+$CellContext`max$$}, PlotRange -> All, ImageSize -> {400, Automatic}, 
+          PlotStyle -> Directive[Red, Thick], Epilog -> {Yellow, 
+            Opacity[0.25], 
+            EdgeForm[Thin], 
+            Map[
+            Rectangle[#, {
+              Part[#, 1] + ($CellContext`max$$ - \
+$CellContext`min$$)/$CellContext`n$$, 0}]& , 
+             Transpose[{
+               
+               Range[$CellContext`min$$, $CellContext`max$$ - \
+($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$, \
+($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$], 
+               Map[ReplaceAll[$CellContext`expr$$, $CellContext`x -> #]& , 
+                
+                Range[$CellContext`min$$, $CellContext`max$$ - \
+($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$, \
+($CellContext`max$$ - $CellContext`min$$)/$CellContext`n$$]]}]]}]}], 
+      "Specifications" :> {{{$CellContext`expr$$, $CellContext`x^2, 
+          "function"}, ""}, {{$CellContext`min$$, -10, "domain min"}, 
+         ""}, {{$CellContext`max$$, 10, "domain max"}, 
+         ""}, {{$CellContext`n$$, 10, "rectangles"}, 10, 100}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{449., {207., 212.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.551005029216626*^9, {3.551005095336934*^9, 3.5510051058829145`*^9}, 
+   3.5510058055502133`*^9, {3.551005911456637*^9, 3.551005928276716*^9}, 
+   3.551005986517965*^9, 3.5510060182834826`*^9, {3.5510062513519964`*^9, 
+   3.551006265228171*^9}, 3.551006321747142*^9}]
+}, Open  ]]
+},
+WindowSize->{1350, 643},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Background->GrayLevel[1],
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 5347, 128, 332, "Input"],
+Cell[5929, 152, 4232, 84, 464, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10198, 241, 4760, 119, 292, "Input"],
+Cell[14961, 362, 3685, 73, 70, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,413 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15339,        404]
+NotebookOptionsPosition[     13531,        339]
+NotebookOutlinePosition[     14196,        365]
+CellTagsIndexPosition[     14070,        359]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5503546366737595`*^9, 3.550354659208049*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Random"}]], "Input",
+ CellChangeTimes->{
+  3.5503300468381395`*^9, {3.550330623550125*^9, 3.550330631256566*^9}, {
+   3.550354630665416*^9, 3.550354634495635*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Random\\\", \\\"[\\\", \\\"]\\\"}]\\) \
+gives a uniformly distributed pseudorandom Real in the range 0 to 1. \
+\\n\\!\\(\\*RowBox[{\\\"Random\\\", \\\"[\\\", RowBox[{StyleBox[\\\"type\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"range\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \
+gives a pseudorandom number of the specified type, lying in the specified \
+range. Possible types are: Integer, Real and Complex. The default range is 0 \
+to 1. You can give the range \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"min\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"max\\\", \
+\\\"TI\\\"]}], \\\"}\\\"}]\\) explicitly; a range specification of \
+\\!\\(\\*StyleBox[\\\"max\\\", \\\"TI\\\"]\\) is equivalent to \
+\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+StyleBox[\\\"max\\\", \\\"TI\\\"]}], \\\"}\\\"}]\\). \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Random"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5503306334146895`*^9},
+ CellTags->"Info3550316232-8161838"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Random", "[", 
+  RowBox[{"Integer", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "20"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5503306405780993`*^9, 3.550330676757169*^9}}],
+
+Cell[BoxData["16"], "Output",
+ CellChangeTimes->{{3.55033065947218*^9, 3.5503306775782156`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "For"}]], "Input",
+ CellChangeTimes->{{3.550330715857405*^9, 3.5503307187945733`*^9}, {
+  3.5503307744897585`*^9, 3.55033078098013*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"For\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"start\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"test\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"incr\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"body\\\", \\\"TI\\\"]}], \\\"]\\\"}]\) \
+executes \!\(\*StyleBox[\\\"start\\\", \\\"TI\\\"]\), then repeatedly \
+evaluates \!\(\*StyleBox[\\\"body\\\", \\\"TI\\\"]\) and \
+\!\(\*StyleBox[\\\"incr\\\", \\\"TI\\\"]\) until \!\(\*StyleBox[\\\"test\\\", \
+\\\"TI\\\"]\) fails to give True. \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/For"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.550330779199028*^9},
+ CellTags->"Info3550316379-8161838"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "0"}], ",", 
+    RowBox[{"i", "<", "10"}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{"Print", "[", 
+     RowBox[{"Random", "[", 
+      RowBox[{"Integer", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "20"}], "}"}]}], "]"}], "]"}]}], "]"}],
+  FontWeight->"Plain"]], "Input",
+ CellChangeTimes->{{3.5503307833172636`*^9, 3.550330824469617*^9}, {
+  3.550330939710209*^9, 3.55033094375744*^9}, {3.550331006217013*^9, 
+  3.5503310506785555`*^9}, {3.550331464789242*^9, 3.550331471131604*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["16"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.5503310516426105`*^9}}],
+
+Cell[BoxData["12"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051643611*^9}}],
+
+Cell[BoxData["0"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051644611*^9}}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051658612*^9}}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.5503310516596117`*^9}}],
+
+Cell[BoxData["8"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051660612*^9}}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051676613*^9}}],
+
+Cell[BoxData["17"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051676613*^9}}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.550331051677613*^9}}],
+
+Cell[BoxData["17"], "Print",
+ CellChangeTimes->{{3.5503310460042887`*^9, 3.5503310516906137`*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Infected", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.550331105633699*^9, 3.5503311564956083`*^9}, {
+  3.5503311974699516`*^9, 3.550331203752311*^9}, {3.550331271448183*^9, 
+  3.5503312770315027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.5503312045023537`*^9, 3.550331277622536*^9}]
+}, Closed]],
+
+Cell[BoxData["Infected"], "Input",
+ CellChangeTimes->{{3.550331165220107*^9, 3.550331170635417*^9}, {
+  3.5503312184841537`*^9, 3.5503312389923267`*^9}, {3.550331280716713*^9, 
+  3.550331282506816*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Input",
+ CellChangeTimes->{{3.5503313985434523`*^9, 3.550331399592512*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[", 
+  RowBox[{"Infected", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5503314023566704`*^9, 3.5503314113461847`*^9}, {
+  3.550331442842986*^9, 3.5503314544556503`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NewInfected", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Infected", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TotalPeople", " ", "=", " ", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Infectious", " ", "=", " ", "8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PeopleMet", " ", "=", " ", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<People Met\>\"", "PeopleMet"}], "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"Day", "=", "1"}], ",", 
+     RowBox[{"Day", "<", "7"}], ",", 
+     RowBox[{"Day", "++"}], ","}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"Person", "=", "1"}], ",", 
+    RowBox[{"Person", "<", "TotalPeople"}], ",", " ", 
+    RowBox[{"Person", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "0"}], ",", 
+      RowBox[{"i", "<", "PeopleMet"}], ",", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Contact", " ", "=", " ", 
+        RowBox[{"Random", "[", 
+         RowBox[{"Integer", ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "TotalPeople"}], "}"}]}], "]"}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{"Print", "[", "Contact", "]"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"MemberQ", "[", 
+           RowBox[{"Infected", ",", "Contact"}], "]"}], "\[Equal]", "True"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"Infected", ",", " ", "Person"}], "]"}], "\[Equal]", 
+            "False"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"MemberQ", "[", 
+               RowBox[{"NewInfected", ",", " ", "Person"}], "]"}], "\[Equal]",
+               "False"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Random", "[", 
+                 RowBox[{"Integer", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"1", ",", "10"}], "}"}]}], "]"}], ">", " ", 
+                "Infectious"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"NewInfected", "=", 
+                RowBox[{"Append", "[", 
+                 RowBox[{"NewInfected", ",", "Person"}], "]"}]}]}], "]"}]}], 
+            "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], ",",
+          "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"NewInfected", ",", "Contact"}], "]"}], "\[Equal]", 
+            "False"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"MemberQ", "[", 
+               RowBox[{"Infected", ",", "Person"}], "]"}], "\[Equal]", 
+              "True"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Random", "[", 
+                 RowBox[{"Integer", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"1", ",", "10"}], "}"}]}], "]"}], ">", " ", 
+                "Infectious"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"NewInfected", "=", 
+                RowBox[{"Append", "[", 
+                 RowBox[{"NewInfected", ",", "Contact"}], "]"}]}]}], "]"}]}], 
+            "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+        "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", "]", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Infected", "=", 
+  RowBox[{"Join", "[", 
+   RowBox[{"Infected", ",", " ", "NewInfected"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5503314730937166`*^9, 3.550331565750016*^9}, {
+   3.5503316077174163`*^9, 3.5503316085734653`*^9}, {3.550331673739193*^9, 
+   3.550331918892215*^9}, 3.550332027758442*^9, {3.5503320707399*^9, 
+   3.5503320855707483`*^9}, {3.550332140997918*^9, 3.550332142473003*^9}, {
+   3.5503321792851086`*^9, 3.5503321845134077`*^9}, {3.550332227806884*^9, 
+   3.5503324885968*^9}, {3.5503325353414736`*^9, 3.5503325775678887`*^9}, {
+   3.5503326093277054`*^9, 3.55033264437971*^9}, {3.550332686772135*^9, 
+   3.5503327511748185`*^9}, {3.5503327926001883`*^9, 3.550332796342402*^9}, {
+   3.5503328926769123`*^9, 3.550332898716257*^9}, {3.550333011302697*^9, 
+   3.5503330347010355`*^9}, {3.550333103104948*^9, 3.5503332018055935`*^9}, {
+   3.5503332452550783`*^9, 3.5503332859564066`*^9}, {3.550333394853635*^9, 
+   3.550333414896781*^9}, {3.5503334496957717`*^9, 3.550333451636883*^9}, {
+   3.5503335130513954`*^9, 3.550333514668488*^9}, {3.550333549102457*^9, 
+   3.550333602285499*^9}, {3.550333640968712*^9, 3.5503337236724424`*^9}, {
+   3.5503339659593005`*^9, 3.550334058230578*^9}, {3.550334090869445*^9, 
+   3.550334147674694*^9}, 3.550334186226899*^9, {3.5503494542623425`*^9, 
+   3.550349454574361*^9}, {3.5503496412600384`*^9, 3.550349670741725*^9}, {
+   3.5503498062904778`*^9, 3.5503498593385115`*^9}, {3.5503501239586473`*^9, 
+   3.550350303469915*^9}, {3.55035039744129*^9, 3.55035042228271*^9}, {
+   3.550350459846859*^9, 3.550350475671764*^9}, {3.550350516079075*^9, 
+   3.5503505511730824`*^9}, {3.5503505857860622`*^9, 
+   3.5503506098984413`*^9}, {3.5503506879609065`*^9, 
+   3.5503506918961315`*^9}, {3.5503507302243233`*^9, 
+   3.5503507387668123`*^9}, {3.550350797672181*^9, 3.5503508491121235`*^9}, {
+   3.55035088960944*^9, 3.55035089101552*^9}, {3.5503510933830953`*^9, 
+   3.550351130235203*^9}, {3.550351178295952*^9, 3.5503512101917763`*^9}, {
+   3.550351816354447*^9, 3.5503518200036554`*^9}, 3.5503518965070314`*^9, {
+   3.550351935027234*^9, 3.5503521429951296`*^9}, {3.550352193412013*^9, 
+   3.550352195947158*^9}, {3.5503522481441436`*^9, 3.5503522575976844`*^9}, {
+   3.5503523129748516`*^9, 3.5503523574833975`*^9}, {3.5503524084873147`*^9, 
+   3.5503524332577314`*^9}, {3.550352543707049*^9, 3.550352666765087*^9}, {
+   3.550352821445935*^9, 3.5503528436932073`*^9}, {3.550352884505542*^9, 
+   3.5503528919549675`*^9}, {3.55035297487171*^9, 3.5503530030073195`*^9}, {
+   3.5503534736782403`*^9, 3.550353545773364*^9}, {3.55035363783663*^9, 
+   3.550353702603334*^9}, {3.550353819457018*^9, 3.5503538449874783`*^9}, 
+   3.5503546088171663`*^9}],
+
+Cell[BoxData[
+ RowBox[{"20", " ", "\<\"People Met\"\>"}]], "Print",
+ CellChangeTimes->{3.55035392282593*^9, 3.550354248776573*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "7", ",", "20", ",", "13", ",", "6", ",", "8",
+    ",", "4", ",", "12", ",", "9", ",", "19", ",", "11", ",", "5", ",", "10", 
+   ",", "17", ",", "18"}], "}"}]], "Output",
+ CellChangeTimes->{3.55035392282693*^9, 3.5503542487795734`*^9}]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3550316232-8161838"->{
+  Cell[871, 31, 1147, 21, 81, "Print",
+   CellTags->"Info3550316232-8161838"]},
+ "Info3550316379-8161838"->{
+  Cell[2564, 75, 801, 16, 42, "Print",
+   CellTags->"Info3550316379-8161838"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3550316232-8161838", 13858, 350},
+ {"Info3550316379-8161838", 13967, 353}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 94, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[676, 25, 192, 4, 31, "Input"],
+Cell[871, 31, 1147, 21, 81, "Print",
+ CellTags->"Info3550316232-8161838"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2055, 57, 206, 5, 25, "Input"],
+Cell[2264, 64, 96, 1, 30, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2397, 70, 164, 3, 25, "Input"],
+Cell[2564, 75, 801, 16, 42, "Print",
+ CellTags->"Info3550316379-8161838"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3402, 96, 582, 15, 24, "Input"],
+Cell[CellGroupData[{
+Cell[4009, 115, 98, 1, 23, "Print"],
+Cell[4110, 118, 96, 1, 23, "Print"],
+Cell[4209, 121, 95, 1, 23, "Print"],
+Cell[4307, 124, 95, 1, 23, "Print"],
+Cell[4405, 127, 97, 1, 23, "Print"],
+Cell[4505, 130, 95, 1, 23, "Print"],
+Cell[4603, 133, 95, 1, 23, "Print"],
+Cell[4701, 136, 96, 1, 23, "Print"],
+Cell[4800, 139, 95, 1, 23, "Print"],
+Cell[4898, 142, 98, 1, 23, "Print"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5045, 149, 313, 6, 25, "Input"],
+Cell[5361, 157, 169, 3, 30, "Output"]
+}, Closed]],
+Cell[5545, 163, 202, 3, 25, "Input"],
+Cell[5750, 168, 170, 3, 31, "Input"],
+Cell[5923, 173, 211, 4, 31, "Input"],
+Cell[CellGroupData[{
+Cell[6159, 181, 6913, 143, 592, "Input"],
+Cell[13075, 326, 130, 2, 23, "Print"],
+Cell[13208, 330, 307, 6, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

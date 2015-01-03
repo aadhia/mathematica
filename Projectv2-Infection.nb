@@ -1,0 +1,218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8661,        209]
+NotebookOptionsPosition[      8212,        189]
+NotebookOutlinePosition[      8575,        205]
+CellTagsIndexPosition[      8532,        202]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"To", " ", "Do"}], "\[IndentingNewLine]", "-", " ", 
+   RowBox[{
+   "Create", " ", "the", " ", "link", " ", "between", " ", "the", " ", 
+    "cities"}], "\[IndentingNewLine]", "-", " ", 
+   RowBox[{"Create", " ", "a", " ", "recovery", " ", "period"}], 
+   "\[IndentingNewLine]", "-", " ", 
+   RowBox[{"Establish", " ", "incubation", " ", "period"}]}]}]], "Input",
+ CellChangeTimes->{{3.5503546811293025`*^9, 3.5503547150482426`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NewInfected", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Infected", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{"i", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", " ", "1"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TotalPeople", " ", "=", " ", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Infectious", " ", "=", " ", "8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PeopleMet", " ", "=", " ", 
+   RowBox[{"Random", "[", 
+    RowBox[{"Integer", ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<People Met\>\"", "PeopleMet"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"Person", "=", "1"}], ",", 
+   RowBox[{"Person", "<", "TotalPeople"}], ",", " ", 
+   RowBox[{"Person", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "0"}], ",", 
+     RowBox[{"i", "<", "PeopleMet"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Contact", " ", "=", " ", 
+       RowBox[{"Random", "[", 
+        RowBox[{"Integer", ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "TotalPeople"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"MemberQ", "[", 
+          RowBox[{"Infected", ",", "Contact"}], "]"}], "\[Equal]", "True"}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"MemberQ", "[", 
+            RowBox[{"Infected", ",", " ", "Person"}], "]"}], "\[Equal]", 
+           "False"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"MemberQ", "[", 
+              RowBox[{"NewInfected", ",", " ", "Person"}], "]"}], "\[Equal]", 
+             "False"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Random", "[", 
+                RowBox[{"Integer", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "10"}], "}"}]}], "]"}], ">", " ", 
+               "Infectious"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"NewInfected", "=", 
+               RowBox[{"Append", "[", 
+                RowBox[{"NewInfected", ",", "Person"}], "]"}]}]}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"MemberQ", "[", 
+            RowBox[{"NewInfected", ",", "Contact"}], "]"}], "\[Equal]", 
+           "False"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"MemberQ", "[", 
+              RowBox[{"Infected", ",", "Person"}], "]"}], "\[Equal]", 
+             "True"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Random", "[", 
+                RowBox[{"Integer", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "10"}], "}"}]}], "]"}], ">", " ", 
+               "Infectious"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"NewInfected", "=", 
+               RowBox[{"Append", "[", 
+                RowBox[{"NewInfected", ",", "Contact"}], "]"}]}]}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Infected", "=", 
+  RowBox[{"Join", "[", 
+   RowBox[{"Infected", ",", " ", "NewInfected"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5503314730937166`*^9, 3.550331565750016*^9}, {
+   3.5503316077174163`*^9, 3.5503316085734653`*^9}, {3.550331673739193*^9, 
+   3.550331918892215*^9}, 3.550332027758442*^9, {3.5503320707399*^9, 
+   3.5503320855707483`*^9}, {3.550332140997918*^9, 3.550332142473003*^9}, {
+   3.5503321792851086`*^9, 3.5503321845134077`*^9}, {3.550332227806884*^9, 
+   3.5503324885968*^9}, {3.5503325353414736`*^9, 3.5503325775678887`*^9}, {
+   3.5503326093277054`*^9, 3.55033264437971*^9}, {3.550332686772135*^9, 
+   3.5503327511748185`*^9}, {3.5503327926001883`*^9, 3.550332796342402*^9}, {
+   3.5503328926769123`*^9, 3.550332898716257*^9}, {3.550333011302697*^9, 
+   3.5503330347010355`*^9}, {3.550333103104948*^9, 3.5503332018055935`*^9}, {
+   3.5503332452550783`*^9, 3.5503332859564066`*^9}, {3.550333394853635*^9, 
+   3.550333414896781*^9}, {3.5503334496957717`*^9, 3.550333451636883*^9}, {
+   3.5503335130513954`*^9, 3.550333514668488*^9}, {3.550333549102457*^9, 
+   3.550333602285499*^9}, {3.550333640968712*^9, 3.5503337236724424`*^9}, {
+   3.5503339659593005`*^9, 3.550334058230578*^9}, {3.550334090869445*^9, 
+   3.550334147674694*^9}, 3.550334186226899*^9, {3.5503494542623425`*^9, 
+   3.550349454574361*^9}, {3.5503496412600384`*^9, 3.550349670741725*^9}, {
+   3.5503498062904778`*^9, 3.5503498593385115`*^9}, {3.5503501239586473`*^9, 
+   3.550350303469915*^9}, {3.55035039744129*^9, 3.55035042228271*^9}, {
+   3.550350459846859*^9, 3.550350475671764*^9}, {3.550350516079075*^9, 
+   3.5503505511730824`*^9}, {3.5503505857860622`*^9, 
+   3.5503506098984413`*^9}, {3.5503506879609065`*^9, 
+   3.5503506918961315`*^9}, {3.5503507302243233`*^9, 
+   3.5503507387668123`*^9}, {3.550350797672181*^9, 3.5503508491121235`*^9}, {
+   3.55035088960944*^9, 3.55035089101552*^9}, {3.5503510933830953`*^9, 
+   3.550351130235203*^9}, {3.550351178295952*^9, 3.5503512101917763`*^9}, {
+   3.550351816354447*^9, 3.5503518200036554`*^9}, 3.5503518965070314`*^9, {
+   3.550351935027234*^9, 3.5503521429951296`*^9}, {3.550352193412013*^9, 
+   3.550352195947158*^9}, {3.5503522481441436`*^9, 3.5503522575976844`*^9}, {
+   3.5503523129748516`*^9, 3.5503523574833975`*^9}, {3.5503524084873147`*^9, 
+   3.5503524332577314`*^9}, {3.550352543707049*^9, 3.550352666765087*^9}, {
+   3.550352821445935*^9, 3.5503528436932073`*^9}, {3.550352884505542*^9, 
+   3.5503528919549675`*^9}, {3.55035297487171*^9, 3.5503530030073195`*^9}, {
+   3.5503534736782403`*^9, 3.550353545773364*^9}, {3.55035363783663*^9, 
+   3.550353702603334*^9}, {3.550353819457018*^9, 3.5503538449874783`*^9}, 
+   3.5503546088171663`*^9, {3.5503549624943953`*^9, 3.5503549660756006`*^9}, {
+   3.5503550524995437`*^9, 3.5503550598999667`*^9}, {3.550355188471321*^9, 
+   3.55035523146778*^9}, {3.550403033978756*^9, 3.5504030681477103`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "1", "}"}]], "Output",
+ CellChangeTimes->{3.550403074067049*^9}],
+
+Cell[BoxData[
+ RowBox[{"18", " ", "\<\"People Met\"\>"}]], "Print",
+ CellChangeTimes->{3.55040307407605*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "96", ",", "97", ",", "19", ",", "24", ",", "59", ",", "79", ",", 
+   "87", ",", "89"}], "}"}]], "Output",
+ CellChangeTimes->{3.5504030740780497`*^9}]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 485, 10, 92, "Input"],
+Cell[CellGroupData[{
+Cell[1067, 34, 6718, 137, 532, "Input"],
+Cell[7788, 173, 92, 2, 30, "Output"],
+Cell[7883, 177, 108, 2, 23, "Print"],
+Cell[7994, 181, 202, 5, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

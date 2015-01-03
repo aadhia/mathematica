@@ -1,0 +1,930 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     42209,        921]
+NotebookOptionsPosition[     39445,        820]
+NotebookOutlinePosition[     39787,        835]
+CellTagsIndexPosition[     39744,        832]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Mathematica Summer Camp Plan 2012", "Title",
+ CellChangeTimes->{{3.539605877150777*^9, 3.5396058901740294`*^9}, {
+  3.539606256001388*^9, 3.539606256911021*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["13 Day schedule", "Section",
+ CellChangeTimes->{{3.539605894513928*^9, 3.539605910334894*^9}}],
+
+Cell[TextData[{
+ StyleBox["Important Places\n",
+  FontSize->16,
+  FontWeight->"Bold"],
+ StyleBox["Kennedy 114 - Classroom from 8 am - 8 pm (Lectures)\nKennedy 220 - \
+Classroom from 8 pm - 10 pm (Study hall)\nThe Suites - Dorm Rooms\nStudent \
+Center - Cafeteria (All meals)",
+  FontSize->16]
+}], "Text",
+ CellChangeTimes->{{3.549637703278125*^9, 3.549637871769909*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Day 1 (Sunday, July 1) - Check In", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.539606107600417*^9, 3.539606108416469*^9}}],
+
+Cell["\<\
+3:00 - 6:00 Check in
+Shuttle confirmed: Will make runs at 3:30 an 7:30
+6:00 - 7:00 Ice Breakers (markl)
+     geography grouping up by state
+     grouping by birthday
+     knot game
+     silent line-ups
+     make a square with a rope blindfolded
+     4 gallons of water game
+     fox, chicken, seed
+7:00 - 7:45 Dinner (Order Pizza)/ Camp Overview (crystalf)
+7:45 - 8:30 More Ice Breakers (markl)
+      pyramids
+      grouping by grade
+      grouping by foreign language
+8:30 - 9:00 Meet the staff scavenger hunt - markl
+9:00 - 9:30 Name game - markl
+9:30 - 10:00 Free time
+10:00 Lights out\
+\>", "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+  3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+  3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+  3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+  3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+  3.539608579664921*^9, 3.539608623089645*^9}, {3.539608701011505*^9, 
+  3.539608703984898*^9}, {3.5396088293471537`*^9, 3.5396088298333893`*^9}, {
+  3.539610951434636*^9, 3.539611071440559*^9}, {3.5405610551801434`*^9, 
+  3.540561064222567*^9}, {3.540564018183683*^9, 3.540564021150414*^9}, {
+  3.547459157464266*^9, 3.547459180813118*^9}, {3.547460002002698*^9, 
+  3.5474600236474037`*^9}, {3.547982317608493*^9, 3.547982444963357*^9}, {
+  3.549637798479911*^9, 3.5496378005021067`*^9}, {3.54987936376538*^9, 
+  3.549879372813963*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 2 (Monday, July 2) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606071370596*^9}, {
+  3.5396061117683907`*^9, 3.539606115255781*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 4:45 \
+Project time\n4:45 - 5:00 Quick break \n5:00 - 5:45 Special Guest Talk:  \
+Crystal Fantry - Wolfram|Alpha! \n6:00 - 6:45 Dinner\n7:00 - 8:00 Dessert \
+Social with Stephen Wolfram\n8:00 - 10:00  Special Guest Talk: Stephen \
+Wolfram \n10:30 - Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+  3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+  3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+  3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+  3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+  3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+  3.5396108571686487`*^9}, {3.547459196716867*^9, 3.547459201851872*^9}, {
+  3.5479888252497883`*^9, 3.54798882876012*^9}, {3.549637410837785*^9, 
+  3.5496374118593807`*^9}, {3.549806630939548*^9, 3.549806668174168*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 3 (Tuesday, July 3) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606073962484*^9}, {
+  3.539606119767415*^9, 3.539606126663117*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Michael \
+Sollami - Image Processing \n6:00 - 6:45 Dinner\n7:00 - 8:00 Activity\n8:00 - \
+10:00  Study hall/Project time with TA\[CloseCurlyQuote]s\n10:30 - Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.54745920703747*^9, {3.547988842336693*^9, 
+   3.5479888477909317`*^9}, {3.54963741537156*^9, 3.549637416515335*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 4 (Wednesday, July 4) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606076451043*^9}, {
+  3.539606129366825*^9, 3.539606135992275*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Erin \
+Craig - 4th of July in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " \n6:00 - 6:45 Dinner\n7:00 - 10:00 Movie night for the 4th!! No Study Hall \
+Tonight!\n10:30 - Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, {3.5405613238759947`*^9, 3.540561333383128*^9}, 
+   3.547459214255344*^9, {3.54928234272414*^9, 3.549282366737162*^9}, {
+   3.549283219482932*^9, 3.549283222432757*^9}, {3.549637421851307*^9, 
+   3.549637436891657*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 5 (Thursday, July 5) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606078658257*^9}, {
+  3.539606138262377*^9, 3.539606145758327*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk:  Eric \
+Rowland - Integer Sequences\n6:00 - 6:45 Dinner\n7:00 - 8:00 Activity\n8:00 - \
+10:00  Study hall/Project time with TA\[CloseCurlyQuote]s\n10:30 - Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.547459218558178*^9, {3.54798886377528*^9, 
+   3.547988866005612*^9}, {3.5496374447540817`*^9, 3.549637446177661*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 6 (Friday, July 6) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606083289754*^9}, {
+  3.539606147925681*^9, 3.539606153285255*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Mark \
+Lawton - Mathematics and Magnetic Residence Imaging (MRI) \n6:00 - 6:45 \
+Dinner\n7:00 - 8:00 Activity\n8:00 - 10:00  Study hall/Project time with TA\
+\[CloseCurlyQuote]s\n10:30 - Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.54745922389399*^9, {3.547988870366243*^9, 
+   3.547988875356944*^9}, {3.5496374530343122`*^9, 3.549637507823051*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 7 (Saturday, July 7) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.539606084465775*^9, 3.539606085657943*^9}, {3.539606155493367*^9, 
+  3.539606162212906*^9}}],
+
+Cell["\<\
+8:20 - 8:50  Breakfast
+9:00 - 4:00 Museum of Science and Duck Tour
+- Bus leaves at 9 AM - Shuttle confirmed for 40 people - ALL MSC STUDENTS AND \
+STAFF ATTENDING
+- Need to be at the MOS at 10:30
+- Duckboat leaves at 11 am
+- Will have lunch there - students given food voucher
+- Bus departs at 4 pm
+5:00 - 6:00 Free time
+6:00 - 6:45 Dinner
+7:00 - 10:00  Study hall/Project time with TA\[CloseCurlyQuote]s
+10:30 - Lights Out\
+\>", "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+  3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+  3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+  3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+  3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+  3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+  3.5396108571686487`*^9}, {3.539612099188559*^9, 3.5396121250884943`*^9}, {
+  3.539612159071373*^9, 3.539612162189228*^9}, {3.540561538164748*^9, 
+  3.540561544780016*^9}, {3.540566625453665*^9, 3.540566633674053*^9}, {
+  3.5474593785324717`*^9, 3.547459383465695*^9}, {3.547459501635765*^9, 
+  3.547459537985579*^9}, {3.547460132868886*^9, 3.547460140880711*^9}, {
+  3.5496375240931997`*^9, 3.5496376115851517`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 8 (Sunday, July 8) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.5396060869296093`*^9, 3.539606088722275*^9}, {3.539606164924821*^9, 
+  3.539606171612969*^9}}],
+
+Cell["\<\
+8:20 - 8:50  Breakfast
+9:00 - 2:00 Blue Hills Hike and Museum
+- We will take cabs to get there - bring activities - picnic lunch from Curry
+2:00 - 3:00 Free time
+3:00 - 6:00 Study hall/Project time with TA\[CloseCurlyQuote]s
+6:00 - 6:45 Dinner
+7:00 - 10:00  Movie
+10:30 - Lights Out\
+\>", "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+  3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+  3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+  3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+  3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+  3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+  3.5396108571686487`*^9}, {3.539612099188559*^9, 3.5396121250884943`*^9}, {
+  3.539612159071373*^9, 3.539612162189228*^9}, {3.53961241236954*^9, 
+  3.53961247344208*^9}, {3.547459541826733*^9, 3.5474595628322477`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Day 9 (Monday, July 9) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.539606090401348*^9, 3.539606091417192*^9}, {3.539606175116061*^9, 
+  3.539606181715706*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Michael \
+Sollami - Game Programming in M- I\n6:00 - 6:45 Dinner\n7:00 - 8:00 Activity\n\
+8:00 - 10:00  Study hall/Project time with TA\[CloseCurlyQuote]s\n10:30 - \
+Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.547459229293859*^9, {3.547988746904283*^9, 
+   3.547988763595838*^9}, 3.5479888174590197`*^9, 3.54798888254084*^9, {
+   3.547988918196718*^9, 3.547988927081627*^9}, 3.547993814780933*^9, {
+   3.549637621096879*^9, 3.549637623024733*^9}, {3.549806551968276*^9, 
+   3.54980657331565*^9}, {3.549806604193891*^9, 3.54980661449763*^9}, 
+   3.549806719054825*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Day 10 (Tuesday, July 10) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.539606092753396*^9, 3.53960609352064*^9}, {3.539606184452445*^9, 
+  3.539606191211186*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Michael \
+Sollami - Game Programming in M- II\n6:00 - 6:45 Dinner\n7:00 - 8:00 Activity\
+\n8:00 - 10:00  Study hall/Project time with TA\[CloseCurlyQuote]s\n10:30 - \
+Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.5474592317267113`*^9, {3.547988778331781*^9, 
+   3.547988786434404*^9}, 3.547988836343062*^9, {3.547988930505609*^9, 
+   3.547988937185219*^9}, {3.5479937968278933`*^9, 3.547993813221744*^9}, {
+   3.5496376262969227`*^9, 3.5496376270384617`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Day 11 (Wednesday, July 11) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.5396060951050243`*^9, 3.539606096160838*^9}, {3.539606194107019*^9, 
+  3.539606199122774*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Crystal \
+Fantry - Wolfram Calculator Demo\n6:00 - 6:45 Dinner\n7:00 - 8:00 Activity\n\
+8:00 - 10:00  Study hall/Project time with TA\[CloseCurlyQuote]s\n10:30 - \
+Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.547459235846395*^9, {3.54798879959439*^9, 
+   3.547988808265375*^9}, {3.547988854447761*^9, 3.5479888579282303`*^9}, {
+   3.5479889613536997`*^9, 3.547988970007195*^9}, {3.547993801760518*^9, 
+   3.547993810805242*^9}, {3.549637631256667*^9, 3.549637631996313*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Day 12 (Thursday, July 12) ", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.539606097464864*^9, 3.539606098840667*^9}, {3.539606201658543*^9, 
+  3.53960620621126*^9}}],
+
+Cell[TextData[{
+ "8:20 - 8:50  Breakfast\n9:00 - 10:30 Introduction to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\n10:30 - 10: 40 Quick break \n10:40 - 12:10 Project time\n12:20 - 12:50 \
+Lunch\n1:00 - 2:00 Chaos Theory\n2:00 - 2:10 Quick break \n2:10 - 3:45 \
+Project time\n3:45 - 5:00 Free time \n5:00 - 5:45 Special Guest Talk: Matthew \
+Hoek - _________________\n6:00 - 6:45 Dinner\n7:00 - 8:00 Activity\n8:00 - \
+10:00  Study hall/Project time with TA\[CloseCurlyQuote]s\n10:30 - Lights Out"
+}], "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+   3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+   3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+   3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+   3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+   3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+   3.5396108571686487`*^9}, 3.5474592402296047`*^9, {3.547993821685163*^9, 
+   3.54799382654029*^9}, {3.549282468719552*^9, 3.549282470111389*^9}, {
+   3.549637635657649*^9, 3.5496376470712643`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Day 13 (Friday, July 13) - Check Out", "Subsection",
+ CellChangeTimes->{{3.539606011803659*^9, 3.539606052752204*^9}, {
+  3.539606100408656*^9, 3.539606101441032*^9}, {3.539606208514583*^9, 
+  3.539606222849395*^9}}],
+
+Cell["\<\
+8:20 - 8:50  Breakfast
+9:00 - 11:30 Student presentations 
+11:30 - 12:00 Final Talk
+1:00 - BUS LEAVES to airport\
+\>", "Text",
+ CellChangeTimes->{{3.5396066438541813`*^9, 3.539606667232457*^9}, {
+  3.539606748362647*^9, 3.5396067749915*^9}, {3.539606810774776*^9, 
+  3.5396068357158012`*^9}, {3.539608108955303*^9, 3.539608182441338*^9}, {
+  3.539608226848301*^9, 3.539608310810383*^9}, {3.539608349216579*^9, 
+  3.539608407027604*^9}, {3.539608468825451*^9, 3.5396085374112587`*^9}, {
+  3.539608579664921*^9, 3.539608623089645*^9}, {3.5396108484158163`*^9, 
+  3.5396108571686487`*^9}, {3.539613093697196*^9, 3.539613102932*^9}, {
+  3.539613156952854*^9, 3.539613205053364*^9}, {3.539614940415107*^9, 
+  3.539614976481469*^9}, {3.547459246803362*^9, 3.547459255656988*^9}, {
+  3.5474600425663137`*^9, 3.547460070828885*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TA Schedule", "Section",
+ CellChangeTimes->{{3.539605912760491*^9, 3.539605920693576*^9}, {
+  3.5498128524882507`*^9, 3.549812854413645*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnf1v3OTa563d/WF/379gf4bOX4Aos/vTIjijfVZHAmkk9KDzjFhVOjs8
+oLNMdSTIoAKjqqjz0C0TtWKoFC8is201ykZTyrotk4gaWgdh1Boat3WquJua
+xiWmxe06dPZ+8bx73pLJ2Cnfjy7oxPHYl+/r9vW9Xxzf//7V//YPqX8lCMIb
+/5b87x/+8b/H//mf/zHzX/4N+eE/ZN78p1f/Nfkgk//+HdmHfn782Hv8+Pfa
+Y49ajfz/d39LjXz4/XGNbfd3oL+qtRnf2d+B/7bxfxwZR8aRcWQc+Qk98u8t
+B+Q//s4OyP/fOPjvLWf5nR3w98Zh+Zb6txq+4cg4Mo6MI+PIT+KRa95lAAAA
+oC/t/ZTfyZZ9b3+066xWq4Xuw67wCi7tUpei6VUEXYKfEzAiE80OCx3O8iAc
+T7ZXcGmXuhRNryLoEvycgNWF4/dGpwPC8WR7BZd2qUvR9CqCLsHPCRgXjlaD
+cDzZXsGlXepSNL2KoEvwcwLGhKNtfhzC8WR7BZd2qUvR9CqCLsHPCVhnj6MG
+4XjCvYJLu9SlaHoVQZfg5wSMCgftbjx+XPv9Mf0HwvGEewWXdqlL0fQqgi7B
+zwlYXTiaf+sxDuEoTM8tzn1J7EKLLc6KIvvtiZkK/e304cIkC3zq0y/mzi9O
+H+1z0hMzxOe58htDXuOpC2fOy/33H+DVwZOnB5yRluSZL6UPDgxVCOwa5TOV
++f1bLyhyxgv9z/j+zP85Q0vy4+Gj88axL6QFudij8Cccu/1HT06L5YZ9eHAr
+Lo09dvsOiLNfymf6XuakY3f45GlSnc5fCCyicbk04n1H7YPZRWnhQusxj5y6
+QCrY6dnPt+rn2PNDsJ/7Ds+f6X0jhBBiasdnzl868+V887oOfs6qojzz6Yle
+36J/x8F7HHScivQ7Ho9DOMQbtSDMRfLb/bM/8p8e3riw7RONUDFO33hE9rnx
+pdhzn8OLD8kem7c+GHi6A/O3HrVc1283P9ySV1OVW7UBZzxxbZPuMXd4cAnM
+/mA3Xdr8eabHzT6ooAaf8dSN/zegJDvt5C16zJ5fmWjs6kdrcCvosIPzzFhj
+98YxeaPFJXUu+IadZOymTl3ZbHrkSuLxHXJppNhRO7r4gLr0qH7MwpkVt+Ho
+xrXgrDLhOhbkJy2NpXv9boQJh5jb9MW11po8NfdjS9xr1g9fBH6LCQfVC9rv
+oDYW4fho+sulby8tffXdLVbUG0sXl76+dEWao+2BM2bjtrWLQzbGhrCBFWP2
+2n2yz7VK7/I8eGGDqcDUoHN9uPAzqxE/S19euvXb5pZT4tTczdqAM55Qf6O3
+7emByefghYfMp6Xz8jWHunTrfHDra2DNHHjGz5dpSS73Kcl2m7vh39e9Cn+S
+sSPtqyWHOrO+tnbDXLt99+evZwOy9GDhGGPs/D1r6zeWpB9Y1frtx8A+4wRj
+J15jt+ntH5a+XbnPXNIDr3T7Lo0Su0LxvP6wrmX+MT9VazzJXNJ5oj5zbAt+
+jreOBfg5JS7e+q3W/0aYbIhJA/jzr27UGyyP+HUd/5bdHRsr6tzFmw9rPc/l
+D1VxIwIyJuGoOyaxotabd8FBqbVldaNHctuCjVIxiO6T1LrBC2RWIx49+nr2
+eKNiHDpFNXfT0bkEz7CW/O1L841DTS/olrOxxJqFRY0edkML1uWhhIOFbFYj
+Z9lcOnWCbdeJA9Z3XzTryf+Yv01v5PsSuyne+HSJ3COb935sqcMnZs+r3y6U
+yecza1Q4rEvlbdZM7sa6JvHArW+SM9Ls4dfMsxcGuURt/ym9Ee5xCMeA2P1v
+uqV2+zserM+vUg29f+Zoa52cv81uh6/nvpg5dbLXsMOwwjFE7OYrA6oTcZ5m
+vM214uHjU5/On658ceTYFnscY4vdYe6SSX0+uMgTSGArd/sujRC7w4utnSBe
+B4o/0G89YMMXcyuPWD3ZSktgjPkhyE/xWkveG4twDAhxRZwdVJ5TFbPpky+I
+x6VraxvO2gxt0p+4sdkz7uyVI75kjG+oqnlHdGj0kYs/s1vkUnGB9Y+c4JbV
+FmykinH1t2aBNLc3vS2z3LL51ae0wPnAxtdi0LDkYcliVUQ9tZWOfFvyaWnw
+8O3sXmjWE35TrLOe46yvVlLXMcWrfqvm/paHqlpqZsONenJjrjZq5mCX/Cx9
+/9Zdd1zC0T92/zKn8yKlN7XI2qKPzLaBxGOX6k1BBknXW5rjGCV2g6pTp0v2
+3LGtTQaNL3Z+A29j9kBTOAJbntt3aYTYHZRurOnThz9nfUbfn9lrbuOwPBDW
+d/Oj+znW/BDg5/Ez18yvT33Oi3pMwjEgxFODynP/rHrthwtH6rt1NPk+/JIN
+xtY2ZoLGhdjjuBT/rYk7Kxw8IqTcju87wK7UL/wx2EgVo7W71wxli7d85/Xv
+yvuOLm02Cr/z6r64zRsWXc3sIb0aSTjemL3Cd97/9gk2jLD5VXeXnLj0yG/s
+XDt/cjw189qFjlA2auZAl/iw5NW5E9Pf0W9f3ZK8jhg7Pp+yKR3126LrP7Sl
+kSnWXHx479bcnHyDjek9COotjlU4BlQnf7qEDlVd+foam6jq0aCaYOwKEuu3
+bv62se4PLY9JOLpcGj52jWNeba0DvGy5ArLPD1cWd7iODZcf2v3sOkuwG2MM
+8b7hynN/S01ubPyw4g8U3L4YPHDBhYMbnel4vIPC8QZXPaYXD+t9uQc9JrNG
+tcACf+OwOD37xZGOlkNbxTj+7b1ad8XY96lKHXRuSqwfGjDsc1ha5xfw260j
+I3l14MSRT+dnTtGs3kg+HwyRfOrDzu7X56/QFmCPMWd61bPM+UfBs3iBBTV1
+9OTMqfkp2rTgLahmzfRPFFwz+7nUeApi3TTXuZw92vi2EjA4Od7YzbB7xPrh
+0lXa3nvUNtbRcQo+jOYElGTw/bvl2PWvTkdl1qTfmKE/zlv08/3ZoftBOxE7
+ZuLXKzYVWYdPUY0wVDWSS6PHri2xn27tcbAkf2shoMk06fzQ5Se3rQnHVkM8
+VHlOdQnHh+frLRmtZ3Jmcxy8y7EDcxztwnHanyTdrMO9G88UeWCBn2b9cd6k
+lNYedVSMOXpvnrj6KKhi1Ocre9wyJ/0Hc5yez1P18uoNkbX0amsk4eyvsJDd
+u7K/UaO+pMOzH5w3g4Tjo+nvms9N3b54sv2wSxubtYdrKv3x2NKIwiGyRzVq
+tM3J+7zskhs1irZ+D7Pk1lUz+7jUaEi3YQ7bGtx67FpHfrqa7kfO39x49OgW
+G5H+gHXGH5rykC5tI3Z9q5M/LsS3f8EaJMHjAxOLHelxzC6oqnZl+u36TGVt
+Y2gtG82l4WNXt/ab4tLPjSB+dXezNsocx47lhwA/uW1JOLYe4mHKs0M49vNm
+pz9PF+zkPn+Ogz9SxUerdkw4DvCmVG1ptjFewYcKxzNFHlgxPviSz/5sPvBb
+TZtsKNKvDA/v3rpq3ueF2lUx/OkYnhw6plCL3zVm+H3961XIAV4d4Jmhtvnb
+fR5T3n+cYY2l2ubGVc2fsWpNPn7NPMwf8CPc7xw3qD91sLH28wYL/KZ5aeiC
+KvA7rrbpbjzyv3zk7frzh7XN29f021wou2tmH5cOnPjw2OfEPjgsfsXuyhsL
+8/sPBozejzt2fiuxRhufnVVrPx/RrT26vbLGPb89dAN1O7HrU51I+X99lxfv
+hnWPXd49NXDWfnKxIy6xMnx472eLPTe4GSSvY3Fp+NjVrT0h+/21zY17vD6M
+0FnbofwQ7CezLQnHNkI8RHlO8SaQP9omXm089LrJT9ZdN6jxHkdjcnznhqrq
+utY2O8Pn/XmzbZvnCr7T3z4urdxvFMStenr/8Evd7+5s3l9n98XVrorRSMVd
+j9qSWLQ+6Ux50ONvUgK9ImdvNAMe3tX9AqHTE75PGw5rCF1rJJ9m7L7iI893
+l7rr6oeVHx80/Fn7cbQ/LTksNf8yZXOj/tB+s/Qe3l2jY918POEqLRitXvn7
+uNQwPsR6NagpuBOx85+XDm4kF+a0+i1PHzftfsCgj0vbiF3P6sTsQJk99MJw
+zJkeD1tOMnZvfCqv1z16uJPVaZTYceu8KUgvsu7pIzVoLHQn6tiAgAb5ua8u
+HFdHnePYRogHluf+WfYHO3zAlj9N10Zf4ajtjHBM0Hrd6fvoSOaJD46K+zv6
+/geOf3D0RK9c98bB40cqvPIEDxps1yt6dnGqq/k9RTb2Ot2Bwv6jfv3p3WIp
+0CP0/ZP8PgVFvkvKpLv0pg4HT2oP59KEY1fYf1CU2F+Eba4F97layn8rLm0h
+dkNWp/2HSfn3KOpwYker0we9jjB2l4aMXe+gdNaT4fwMMT9EtzwHWbPH4Vtt
+LMLRqVqD2LkCH9WTLTO8VxNzqdfZ4dLWXEJ1iqBL2/EzdFd3b3k2JsfZ78c9
+OT5BC7y6rdrxue9u3li5tbQgbXMMbYxefVhRb6yYVzV1eohXWPxhXdp34OS3
+N8wbN/Qzp7beAxqzS6hOQ9qYYrfjfo4voLu3PP3Hcf1pjhqE44n3Ci7tUpei
+6VUEXYKfE7AW4UCP4w/hFVzapS5F06sIugQ/J2BsqIpLRg09jj+CV3Bpl7oU
+Ta8i6BL8nICxv+PgivGYCwiE48n2Ci7tUpei6VUEXYKfE7D647jNTke9DwIA
+AAAEwOY4+EcIBwAAgMG0yASEAwAAwGCafzle73dAOAAAAPSh/amqxzX0OAAA
+APSlWyYgHAAAAPoA4QAAADASQwuHoymyrBhe6zbXVKpV1aDLwdgr6kVlxQv6
+pmtpsqIH/moY7GVFWbYH7xeAZ6hyVVZMt3ujam/ZobHgmnKlJBbFUrmqW+7g
+/SeBqyvVckkkPin61gp8jCB2IxGp2A3IFVHDNhRadKJYqYZdtfoRqRAPLRyO
+HBcIManFZaOcpptyMvl8cYp8nAq8HiUfE4Tcli9VyZEDX9zSVx16ZkFIlfTm
+NrvKtsVkZ6sObRtLLjIfhFic/yukikpo3tR9SgltPiVyUqj3EGI3gk/Rit2g
+XBElXCmX5IVXj2e8rIVXvXoRtRAPLxyukmAOp8uNG9kR2aZEgd44rn3HvPNr
+4CnUQlyIF0nLzPO2cq3K4ef25LZ2bzpFXimSxUZV4BWYbFLCqh1mJcbSjeG3
+VR0pT73My1ZIDhEslqVTst++9xQxzVwKsWGD2A1J9GI3KFdEB12k+ThTUvyy
+s9Us1bykGi3piF6IRxOOeCZNJcAvVEuKC83KoBVTz2UqRBg8S87wekNqTkFy
+qXDQn+N8byFRUtn1unoh7W8iG0WF33rkTkzVt2X5jtsRjoLvSVyy6lviQixB
+zpsIK/koeXL2lNYmoSxJxgth1VZXLZAyKrSViCVmsyXFDMmjGmI3JFGM3aBc
+ERU8jeSaWFZq28jaBm393LCJYohHEY64kJRkkfZA2Y2si0mS27OkiuRpZVA/
+fk7Yc9iumVnan8rIhqlWcuRjtmqpBdoqSxUkw1ByJBvE8qQIKlQzkxXNtEz2
+e7aRSUysWNVtU2V75qxtCkdcSOTFTKxeE6wKVa5KntzqISUf6pKQkTq2akVy
+tdmw6oEt52g2jshovQ9iNxRRjN2gXBEVHOKnkO/sXbD2SZT8jGKIRxOOhOpQ
+XUiVDD4EnZFUUiNahOPjX+ndLZT8aTFPKZeqmq2ySPDwWFKGfaaznLJm1TzX
+towSyQ60zcZuzJRo2pZp2XqFSlDF9LYrHEVFIbd2vOD6FbhkaUWefBzb4tjO
+xKLiFOi1qh1bNdZsDWvoXqMd9tCa8T3oHzuvHjoSu4mN9SJ2wzEgV4QSu15+
+CvnOsqMVL1ICF8UQjyYcccWrqaS3HhdtW6L3r+uI8Tbh+L8KaRAm1PY0zITD
+78u7KtmBioijV1IxoQkRDldJCp0UFHubwhEvaJ5ZojOqtkVu/LRke3qBJR87
+1zzP1ufuR8Qtk1qQFDuEio6BxPJhDVk6aqGrGe9pVUnWQxy67xu723IzdNmJ
+zbcidsPRP1c4ocQuCNbjyFY7CsrKxaLV44hiiEcUDpm1/OhQVJp0Rktka6Fd
+OH6mvxXKfr/dq+bTuYreKhyOLxxsRCuZ1yx6w9HOPt3BJi2Tpta7ZrVS1e3t
+9jjiedJEtMjpEpk07/F59UA4pqFzDGtiTR8+HydqLenHYYqZLofV/PLYuG6y
+2NKW5g/GZKsheVQbFDunHjndsCfXh0fshmJArggndkGwIY5Y2zCjKdHmZC7U
+eecOohjiUYWDZn8zy3oKWTp86XQIx681M0MVoaA7rqkU6RMLksmHqngk6sJh
+pGmVqjg1z9IqbO68QHaoErEX4iXFdB2TPThA0/s2hYM3HhQ+1ZqiNzhX8PAe
+6TRzNOqxfFkxLUuTS6yflQi3qsrMp3ShopumrlbSNMTxapguIXbDErnYDcoV
+0cHVy2y4IyOphmUZUjHDapoYsWGh6IV4K8JRY5PZSTYe5ZZSDeH4k/AcEY6a
+a0iNEadEruJPeSdLvG1BhYPPg5cyjVGqTCbpPzzjEb1oPGoVL7KnHNXtPI5L
+x8mpUnsGrSE51i1lySelhdjYcY1ipjksF0tmZTP0qS+nkk+3jBymKlq4jS7E
+bngiFrtBuSJS2FqlmXJI3cqXwxwA6knEQrxTrxzxHNt23EHdd5fu1b2T5wRv
+f9LwXHuYUpokHg3JBB8V2LUgdk8WrjNUxgqZKIUY76oCAAAwEhAOAAAAIwHh
+AAAAMBIQDgAAACMB4QAAADASEA4AAAAjESgcAAAAQB+6hWP9/iMYDAaDwQIN
+wgGDwWCwkQzCAYPBYLCRDMIBg8FgsJEMwgGDwWCwkQzCAYPBYLCRDMIBg8Fg
+sJFsaOFYlxcXzi4u32ndeNc4d/bcgrY23LkerNylH8yb6tnFq3eG+sp47Lqm
+zM5+Nv3JZ6fPq2bYBU6cOXt+YUFbb924oinzZxe+X30Qqm8bl8+fmf7kxPTM
+ybNLRril1FpciN0QFsHYbVxePCfOUJfOqUOmiAnbg++/WZg/L1+5271Ruf5L
+6O51lWeUQjyscKwtPENXENlzerW58fvZv5JNT7270Ovgd7TPnnr60HXy+Zfl
+twThnfO0/pw7uEcQ3rs+oQtcL765l619sueZp9m/T/9tYS3MAj93kPnz7LGV
+Fic/eoFu4+UTjq0qrz/Ly2fvU3yxmBcOfR/yvYPY7drY3Vx4RWhz6fl3z0yy
+rTicrb/P6tUrM1dbCvMcc3jP2VBrWqdFL8TDCsdd+Xnm72uzjUJen2a3zPN5
+udfBzW8OCcKhFfZ1ojvvf0Obagv5veTWI63HO7/seCPtXP5l4uH7877PK+pJ
+Kn9vzoVY4AuFl1lB7p2/Wd/o11Xh0GJYyWftEK2WL8/WW4ZXFo9Rl/adDLGR
+j9jt2titsoT8l7PLG+zHB+c+oS3M90PU1mBb/+glFryXmi0B3hgm5XkuQsIR
+wRCPJBx7X9+3t9ncunnmGaFFOO5ePbRvb31pwxenF1dXvjlS//G//v0/+Z8+
+WlpfyL9IPjzzrL9n8RteGuunD/7F3+mFtxdWH618c6wRPvkT8qu/XWYKe+7g
+i0+9eWa4q1t+naaatp3lmffe+WQhxAKnl//0i8+3tHMuz/C6KrwfUvIxl46x
+s7eNwFyeIWW+N7x2F2K3W2Nnshv/UJtLq9N/f7u4GP4AS7utH3qBR2/v6Zv1
+Lc8KT71A8tiL0RGOCIZ4fRTheEZ4+fT5E3S0ihXy5U9eJhn+rReEZw5S4Zjd
+xzRxyfhpWTlEdPzpQyt3V8/Slsbf5peWl77+jEjkn/Nnfrr7YIG1JF/Jn/le
+k995ge3Jb0lhz0dnr15fVtjG935ig2NsBMCP7/QS6aEYJJ+8Mrs81NWtsW5O
+e4GHbrTD9cKR2YMv1iV4jTTPXiuc+HN4yeens2/TO+Vu+/bluRDzIWI3pEUw
+dtfPvxfgUhSNysTzB0+8/nS9JXBzjjZlTx8iOTk6whHBEK+PJhwvLqwZb9Hm
+1jIfHnx9Xpl+iQsHnVE6u7S6/svG9ZvLxTf3CM8eWWkbqlJIO+1QY6iKiQUt
+k/m/sc80gsKrJ66srl65uXb5NCkogYjD9AvCU+/K67/4o2SvfLK8fvNkQ7kG
+W8v4WHSMj9Rd0T7zJ4xoXd17VpN58llZXf3pJrXraxuTqwO09bJnfrV9+y80
+ZKHVTMRu18aOjQ9EqMXe25hwFORzBdISOGL6jeHPfqItfCocoQS02yIY4vXR
+hGPvuV8eLRwk986J66tnaNneXZ9+1u9xrKhzrzwtNGHCsdIxx8EukwnHES4c
+vrLcpbdeB4cW176f/QuRlYXzh0gHZLbwsvDSZ+dIGda/O9jYvMzrp9s6yOZN
+Zf68OuwRdsD45Zv3V4kEv3ba+H6G1tU7v6isGvz0TrMAJvb8wKOVxUPd3d47
+6gnay1NDumUQu10bOzZG3dFifyCfPXNWXQ0rcD2MCsczefXOMm0JnF1dPUT6
+j/Nrd1Tu/1ooAQ0oz+iFeH1E4ThLukvU4T10suOlz9bvbxzyhYP2RISXDsk3
+qTTIRMGfrgsHvdG6Jsfryb+uLLTLzwWIncuYP33u8uqD9ZtnnhKEZ8iv3pVN
+7QQP4Z8/UYevGB/xUa/mlgdFOh321+/Dqwb15EMna4Rn//oK7biRnprChXVl
+efmyepWatjqxp1DuLM89ReeqWp+O2xDZ2ONCaAMOiN1ujR136c8FpbmRP5P5
+93NhBa6HMeE4SPykLYHn3/wrHxG6Uxe+UALaqzwjFeL1UYWDqp7xFutZvEVu
+Gb/kScJffk0QnnpzbuX+g5+W5p5nPY7rvla+LC5eNdmQ9SuFcyv1oSqu4I0u
+yfy7e0iwiouGuWZM0zLhLRb+OIHwznmiOCp7wG+PqI3wLBabYSeK9t7ZpeUr
+mjr9dzov/9qQUyQ7Yw3dvKN+xh8PoKOXLT2ycLxizws9//fP5OXVK6p86NU9
+NMSnwywoxG73xu7su/Q5mdfyc5eXjcvfzL1GM8bezsGW8I1NhbP26jn2xI7w
+6sk79R5TpB7HjWCIRxeOR2x2m4vdRvFVv6ewMPO3erdu7+tvvswfVLizfIZN
+T+w5u2YcYk++PV9Q6Dz4S5/xZ2NYl4SNZf1C9KLxUNbej877vVq5QMdLz676
+52pvgg5l35899nyzy7nnrRk53OfJ5U9erne4Vt95mj5Td+e+PzJzKMwh/Qfn
+Zt57pllQLx6av7rzJ0XsntTYrc8e/GvTo2f/MrsUtWdxqZMf0TkO2jO6o52k
+DdSzNO0w4fiLHK3J/ciFeJyvHLm7fn11vevWfmDe9fsI5t2N/jf+nbXAI4zB
+VtbWyJFD/9PjyNuDldW1cKcCuw2xG86iF7tfNiLn0u62CIUY76qCwWAw2EgG
+4YDBYDDYSAbhgMFgMNhIBuGAwWAw2EgG4YDBYDDYSAbhgMFgMNhIFigcAAAA
+QB+6haMGAAAA9ADCAQAAYCQgHAAAAEYCwgEAAGAkIBwAAABGAsIBAABgJCAc
+AAAARmJo4XA0RZYVw2vd5ppKtaoa9lBn8ixFVmxv8I5jxzaUckkkVKpqKA4E
+4JiyVCYulSpV0wnbme0Hd8dA7AZ6E9XYubos0ciVyrJmhurJAGxDrdBKVpJk
+zQ3bmSCiGOJhhcOR43QBkZjU4qlRTtNNOXmYEzlKnuwsT/pGc6Vckq99Eo/5
+/5a1kO92Q8pxV2J1nwqyFaZD2w7uzoDYDUE0Y2ermXh7MSXyRkR0vw2n1OFo
+LKOG3xhoJ5IhHlY4XCXByjVd1uubHJFtShSUYU7kqAVy4yuTDYoupoiHmZLC
+GxKerWZpDJIh1g1XL9EMmClZ/D5yjTwtxmSYbZ1tB3cnQOyG8ymCsbMLLFIV
+3c90plKMMRej1p5XCrRlkpf8onP0MnU8UwnXq06iGOKRhCOeSceFeNG/cS2J
+S7XvvKsX0vH6yoYJUaHNMK2YEuJJtjUpX2LCQaqOZ+TIVcfzO9599TSSemJZ
+qW2jWSF1OFXSe3xnx1HypDxSWkvryzMqmUxBtcJrkA0M7uRB7IYkerFztSLN
+xu1tRL1E4hmf+IBDf4wMlYm2OqaVcjlRjpbARS/EtVGEIy4kJVmkPSbWNdfF
+pJDIZskl5anzlTRrY2imZapUxmN5co1qgepiuiAWi+VbtMeRVG2D3nxCSpnA
+4JxDfBbynS1UhzSHYvmwCtwpkiJJlaPVax8U3BBA7IYkerGzqlmS0pSO5GtW
+mJqEPGXWBq9jEx4E2QLRC3FtNOFIqI6ZpU0+gxR6Pka0WiVXwJz3DFWWNavm
+ubZllDIxIV6oC0eeB4YNVXGSE4qVG1gxaPIJr8CdQizE1NeD/sH1HKuOM7Gk
+idgNSfRixzoXsWqHRHhqImrC4QY2TqLHoNxr10NsT+7+HEk44opXU0mHIS7a
+tsTGnRyxfiM7eiUVE5pw4SA711toLcIRK+kT6QuyFkW22jF3aeXCvP09iXSP
+Y4W2yupZ1UrVDHWcvE9wHTnXiGpWntSNj9gNSfRixx6D6RyV8nTSYBbEydz4
+Q8LmDjKVtiFz11KrcthPYHTQP/c6stAS44k5NZJw0LE/WgFidMAtWSJb6y1A
+qoZCMq9ZtHJqpEvP7i8lH4/l/NucT45XLYtN62SMHb4ufk46SRfLttYMkz0V
+k5tYAuyCzfnGyi2PmFg0HwnFEGdY+wfXtXRNZxgTbNEgdsMRvdh5bCoqUWhN
+Yi57CCipRkk3/LHHWK6ldeKV6Gx5eiLZaWgG5F7H0H0Me3LlO5pwUCU2s6xn
+kaXDbY2hAyNNL6nikBaYVkmwHocdJBx05JPVq3h+EuLo6mXW/SEdO8OyDKlI
+b3MhJYbaomBTckJClFTTMuUyaxMmimG6NCC4ITmF2A1DJGOnFmn+TWRLdM5T
+VwpsMCJbiVY+rtGkVGRj5zlZM0xDE7NsTrYcMT8jGeLRhaPGJr9548EtpXzn
+1VKmMUqVyZAd4uTi1E7hSPBBa409aTmZAStbqzSf9iKJJ18O9bF7imcpuWTT
+p0SmaITbEhsU3LBA7AYT0dh5SinXErpEQQrtWbj+GNVioulnLFtSovXwQy2i
+IR7nK0dcx57k9MwouA71zY2Scx4troj5FEkQu12Lx4spbDcG4+wWRyMD3lUF
+AABgJCAcAAAARgLCAQAAYCQgHAAAAEYCwgEAAGAkIBwAAABGIlA4AAAAgD6E
+IlgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAATAhXTceFeLrkTPSsTjEpCEJKdSd6VgAAAGPA
+VRIkhccL9mTPWqRnTciTlSsAAABjwFVo2z9R6EjhnqXkkvGYIMTiqZJi8Y1G
+tZCIkW3xbCGfisfTohq4p6uXk/F4KpvPpeJkayKV111+TDlL94wlM9lkjJ5V
+gXAAAMCuI1g4jIxASaTTcfahbHquXmIfhWQ6xT8k8krgno5aEPxdU4kY+7eo
+1Wpmln2OJVNMNSAcAACwOwkSDp75Y5ky2WhUMuz3ilqgo0vpkk52sOUcF47A
+Pf2N6ZJHD5/ne3pGmWpFPG83TgrhAACA3UhdOFrnOFytKLQTy8lqge5Y1Oio
+k2dWYkwOAvfkwpEo0IEs/zORGK4gbCOd40hCOAAAYHdSF47W55v8saaUaNiW
+oUqlUlnWbZXler/HUW3rcXTs2RCLWotwuLrIBq1EdiI9jR4HAADsUvxRIyGR
+5CTiiYz6s8wmLOKFciXPJiTSZaPRuWib43AC9gwUjsZsSCpXzNcPgKeqAABg
+91EXjhZoR8BSxHjj52yZJ3hD8p+qIrk/XpeG7j1dtcgnO2r1US/+2dFKCb5f
+3J8zR48DAACeLFzbth3X4z84apH0RtLZkunVjEqWTXQrgXv2P6ZjO8PsBwAA
+YNdjVeNtHROhpOMPvwEAAPTDc0y5Ui6JpXJF0i2oBgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAATjamJMEGLJgt2yUcolBCGpODt8HFcXCxXyS0ctCPHC
+KGcbwS+lVNLIoX9VnhOEj9VfR/6+Jo5aFA0stVKSza18EwAAIgxN2oyK6fmb
+XC1JNyRGypZbOI6r5gQh75LvKnn+Yfx4ClEzhR7aloofV1dGPgm7rviWhMOl
+JZJXtvBNAACIMo2EnyxqfItVzQmDhEMTU89NVbyWLYOO4yliNs5+jsWTomLx
+Hgr9MVm8rRLhSOVzKf5zSeW9FqdaSPNjpgsSPYarphOpfIEfJ1GQlHKOSlMs
+kZEt6outlVNx/6jpQtWtOWKK/5hSLG3qT6kKEw5DKiTY5ngqz07V6VtX+XQL
+R5dv5CimnE3G+SWIsqmJ9R1KGvmcKqr1omOfXTWTSGazab4DcT2fan53K4EE
+AIBJwRJjslAgSTvH8rVXSgrJfCEhJOQ+wlHKPJcutY779D+OrVARyZUVw1Dp
+LrG8TXJvkXxKVlTzHhedZF7R5DyRghgdtlLJV4V4sarpcomk1ARNtkqC7VdW
+FDGTYPJQVOQy+UacNOw9jW5Ki5phVEtZ8lHUXUMu0sNJqsOGqnKK7eoldqqK
+rldp1k6WrADfOq6rUzgCfKtZ9CjxrKzr5RzZFl+4IiWZh6phK/lYLCfz7/qf
+69eSz+dKyrUcEbJETtENViZC2diR7hcAAIwFnvBlXSLJrmzSOYG4EJN0OSHE
+ScL3XNdhuK63nePYulyRNHII17HVUpokZ4d2IPIkqbv+d2Ncp1yNfE7rnp2P
+CfFc1SHndx05H6f5nCXbbJX2CDyN5XOWX9V8PJYjwmGTc5hki+eaSpGNEtk1
+T43z3VwqHIcVksPj/Oz0XLpULClWkG/t19UhHAG+WWaZXILEJcczxIKoWr8W
+ybnztKOhcA8Z/ueWa3E16m1Rtdjx9AzXQQAAiCosMSZU1xHjQkLUrWpGiBVd
+lm9lx8nzkR5Kvv8wf9/j0HEcMZNsHItPhTt0hCpf/5A1m8eJy7aWFtpJFBwq
+RkQOnFp7Pm+kZa2ci7V8gwoH/QpzoC4cWjEhpNsG2QJ9a7+uduHwAny7Tadp
+OvTFKcR9CWgVDrUuHO3X0nE8CAcAILr4idGrmWXS2E5nEkKKdBg8P99auqoo
+qqoqqm5t5zhsbCdRVnTbqzlKjrfqqV60f2gexzGzgpAq6SRNe+QrplpVdM9P
+tnYtSDh4uz1Tkk3bJeeItwhHZ48jXuAjQZ4pZbOidDTAt87rahs6CvDtXttu
+lpjNScbPhYAehysmyBkawsGuhYqOIFkeOR7tBslVxWgdLQMAgGjRzMB2lc3O
+ktZ+rdlQ74F5sSRKy8Mfh6ZrIUf6FJ6tZmivIK17PGGmZNNtdD0ax5Edr8Lm
+jWXT8RwtG6NTCq7TKRxyq3DooiDEKnR2wGGPAQsF1ak5MvlKoao793zhsGWa
+pYuy6XmWSGc0CtUg39qvKyZWVU2lKIpiOG6Ab55ODhbPVRzP0ytZJgR2IUaV
+jOylEgkRMqrtmnTORUgQ4Wi5lpqr0mmabNkmPqkincsvG2MPNAAAjAvWUOcP
+Pjlikrakaat5kHAoh/eQNNzaLO5/HEcrx+vjMKlMmmZ4krkNvjEpX+rocSRU
+2kfQ840BpFiaPjflaal6smWnS2ptcxxGY/94Kp3wn+8y82wSOrcop5hwEH2Q
+i42hpqRkuIG+tV9XGzmiiN2+EcFUS43jZMv00TKZzrULsZzsWdWGa8mYP5Xf
+uBb+3URjnIooyBgDDAAAuxjXsZ3OOXbPc71+0+6uQ780yjmcrnPUAmb2iS+2
+47X93P29wefq8s0jx209jtc8d+evuqA7jOwEAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAIgKnusOfCVV4Pe8rX0PAADArsWRipnGW56SWdEcUgZsNZ9u/NFb
+LMf+6o3/HXRRG/+6TJqYFBLFLR23vpwTAACAMeCW6R9Sx/Jl2bBMtSrSP2FO
+FAf/8bKt0L+Gjmcqim6aeoWtT5Eu6/wtTAV1/C8Gpy/uiG1pocDmck4AAAC2
+i8tezVrUmlnV1UqpdKFtRQhXS+/ZU2xfd5W9firT+k4lpZjJFKsue2F4jL30
+gy2oJLPuS+BiSXYln/Zf21FfDkljq1mwd3PkFLut5xMsHEFLILUv1dS6nJOa
+jiX81S7IRcXiouaQ603Ek2m6BlOc/MpSxKT/3ZyKd38AAEAXVjVLOgoD3qnn
+Lk/96U+i1rZwU+Od4V07s56IEC/JqlTMkE8lwwtayKkmswWPxKqmVYv0TYF5
+uWZXyYe8pJm6TBUlVWk9cJBwWN1LIHUv1XS9ZTmnOFvOifvJXzPov9U8lc3n
+ij/+RL+bKkiGodAXJcZyA14KDAAAfzxoNo5vYfynn3CwJYr4MoBqgiXqgIWc
+PJ1k9XSl3kcokbSftcwKHe8qlHXLsU3DMNta/N3CEbgEUvdSTV7Lck4t76Rt
+FQ7/jY7s9e9pjS3RZGsiUyJM+wMAQBvs3eaJ9hkJW5VJLu7/PbeUFGLZausm
+z9IVjbT4m0sUNRN192JJbA49r/o6wCQgJjutr65NFKttq293C0fgEkgBSzW1
+LOfUKhwJXzjytM/l8VMkOw7YeIEtAAAADlvGQshVm0MyNh28ouNL/b9I87OQ
+bJ1xLtOxoqwV1KoPWMiJCQd9RTnDkkh3IWe5pqqZXs011Go+HeuYQ+HC0Spo
+gUsgdS/VZP5aX87J4RP3XNTUeEM46j0U1lsp2HyJJteSparhoMcBAAAdePyp
+qoKkWpalVYt0pjkptnU4vDvlj4sXzfZOiMOfqspWddO2zQpbeyJTMduWKKp/
+DlrIyaNCE8uQvo1rKXRjUrzHZ+oVuqNSJIfPtHY5mPpkmksqqaR3E7AEUvdS
+TU5jOSeXL7ckOZ4jsYU66j0OXzhsmc7F5CWdyEaVnk6oosMBAADdtI8jxdMF
+vWOciq27musatHF0qflnHKSzISq0dd66RBH7TFr4wYslOVquuXxRjj3Y5VSy
+jU2xgtwxVNUxjkRHn4KWQOpcqqm5nJNsG2x5PvYb+txXUXNaexzt343lJazE
+BwAAvfHcrS0kRNczGmqxpeDFkujSS+3fpo44I40QBS2B1LlUU8tyTp5LfjXA
+05GWjwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiNUVcA7LG/57me
+1/YBAADAk4Yri9nm32PTNSz6J/ye+1syf+tgrCL5H2SsuwcAAE8aXoW9PSpX
+qhqmqSsV9haRpNzzHU399qevn0qXTNv+X//kf8Bi5AAA8IThGXTpomLbe9VN
+ujpSRqrRZb5Tz021vaK8z/4aW0qJ8B//8/P1l0dV8OIOAAB4wjDou3GzHevc
+aYUEX6RPK2WeS5d+HW7/24ZEF81LF7/64n/+iX2QVSyDBAAATxp0WY2uFQCD
+V/cevL9bpMsCqrXmBwAAAE8agWuO89VXA2c5+u7fWE+298KyAAAAdjmeTucs
+spWWlS/Y6kixnDz6/hAOAAD4QyBl6VNS2ZJsOY6pSXTJ1vpTUubFkigtD70/
+hAMAAP4gOFKhseydEEtm5foqscrhPYJwuGvMqtf+binJ9aLxAQAAwJOLx9fi
+G/oxqFH3BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+APz/wEmBGNA
+
+    "], {{0, 200}, {531, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSizeRaw->{531, 200},
+  PlotRange->{{0, 531}, {0, 200}}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Staff", "Section",
+ CellChangeTimes->{{3.539605912760491*^9, 3.539605920693576*^9}}],
+
+Cell[TextData[{
+ "Program Director: Crystal Fantry\n",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Instructor: Erin Craig\nInstructor 1: Peter Barendse (Chaos Theory)\nTA 1: \
+Michael Sollami\nTA 2: Mark Lawton \nTA 3:Matthew Hoek "
+}], "Text",
+ CellChangeTimes->{{3.5396108670013323`*^9, 3.539610921297804*^9}, {
+  3.5396135132942533`*^9, 3.539613519410228*^9}, {3.541328499375301*^9, 
+  3.5413285287890663`*^9}, {3.547459263064968*^9, 3.5474592826713*^9}, {
+  3.547459315903369*^9, 3.547459322445271*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Activities and Ice Breakers", "Section",
+ CellChangeTimes->{{3.53960592725066*^9, 3.5396059374726963`*^9}, {
+  3.540566407473888*^9, 3.5405664135994797`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Tangram Contest", "Subsection",
+ CellChangeTimes->{{3.5409043883863497`*^9, 3.540904400261496*^9}}],
+
+Cell[TextData[{
+ "Who can put together the puzzle first?\n",
+ ButtonBox[" http://demonstrations.wolfram.com/NuttsPuzzle/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    FrontEnd`FileName[{
+     " http:", "", "demonstrations.wolfram.com", "NuttsPuzzle"}, 
+     CharacterEncoding -> "UTF-8"], None}]
+}], "Text",
+ CellChangeTimes->{{3.540904402441272*^9, 3.540904412003854*^9}, {
+  3.540904574555881*^9, 3.540904599826806*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Game Night", "Subsection",
+ CellChangeTimes->{{3.540904930481103*^9, 3.540904941008502*^9}}],
+
+Cell["Have a couple of games Apples to Apples,  Catch Phrase", "Text",
+ CellChangeTimes->{{3.540904945054064*^9, 3.540904951145019*^9}, 
+   3.5409050335170717`*^9, {3.540905140198741*^9, 3.540905142652515*^9}}],
+
+Cell["\<\
+Games for other days : Two truths and a lie
+Platform games
+Relay races
+Soccer Volleyball
+Yiddish words
+Jokes
+Skits
+\
+\>", "Text",
+ CellChangeTimes->{{3.547982470072898*^9, 3.5479824751838827`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Students", "Section",
+ CellChangeTimes->{{3.53960592725066*^9, 3.5396059374726963`*^9}}],
+
+Cell[TextData[ButtonBox["Accepted Students",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://twiki.wolfram.com/view/Specialprojects/AcceptedStudents2012"],
+    None},
+ ButtonNote->
+  "https://twiki.wolfram.com/view/Specialprojects/AcceptedStudents2012"]], \
+"Text",
+ CellChangeTimes->{{3.549283294002144*^9, 3.549283307439804*^9}}],
+
+Cell[TextData[ButtonBox["Twiki of Student Applicants",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://twiki.wolfram.com/view/Specialprojects/\
+MSC2012ApplicantsTable"], None},
+ ButtonNote->
+  "https://twiki.wolfram.com/view/Specialprojects/MSC2012ApplicantsTable"]], \
+"Text",
+ CellChangeTimes->{{3.547459757826929*^9, 3.5474597734414167`*^9}, {
+  3.5492833153904457`*^9, 3.549283317038802*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Project Ideas", "Section",
+ CellChangeTimes->{{3.53960593900235*^9, 3.5396059494030743`*^9}}],
+
+Cell[TextData[ButtonBox["Twiki of ideas",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://twiki.wolfram.com/view/Specialprojects/ProjectIdeas"], None},
+ ButtonNote->
+  "https://twiki.wolfram.com/view/Specialprojects/ProjectIdeas"]], "Text",
+ CellChangeTimes->{{3.547459673692479*^9, 3.547459690714308*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5502435186867476`*^9, 3.5502435300543976`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1344, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 167, 2, 83, "Title"],
+Cell[CellGroupData[{
+Cell[771, 28, 100, 1, 71, "Section"],
+Cell[874, 31, 370, 9, 121, "Text"],
+Cell[CellGroupData[{
+Cell[1269, 44, 170, 2, 36, "Subsection"],
+Cell[1442, 48, 1509, 33, 353, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2988, 86, 162, 2, 28, "Subsection"],
+Cell[3153, 90, 1191, 19, 263, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4381, 114, 161, 2, 28, "Subsection"],
+Cell[4545, 118, 1107, 17, 263, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5689, 140, 163, 2, 28, "Subsection"],
+Cell[5855, 144, 1231, 22, 245, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7123, 171, 162, 2, 28, "Subsection"],
+Cell[7288, 175, 1106, 17, 263, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8431, 197, 160, 2, 28, "Subsection"],
+Cell[8594, 201, 1138, 18, 263, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9769, 224, 211, 3, 28, "Subsection"],
+Cell[9983, 229, 1298, 25, 209, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11318, 259, 211, 3, 28, "Subsection"],
+Cell[11532, 264, 958, 18, 155, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12527, 287, 209, 3, 28, "Subsection"],
+Cell[12739, 292, 1357, 22, 263, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14133, 319, 211, 3, 36, "Subsection"],
+Cell[14347, 324, 1247, 20, 263, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15631, 349, 216, 3, 36, "Subsection"],
+Cell[15850, 354, 1263, 20, 263, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17150, 379, 212, 3, 36, "Subsection"],
+Cell[17365, 384, 1157, 18, 263, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18559, 407, 222, 3, 36, "Subsection"],
+Cell[18784, 412, 834, 15, 83, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19667, 433, 147, 2, 71, "Section"],
+Cell[19817, 437, 16195, 270, 215, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36049, 712, 90, 1, 71, "Section"],
+Cell[36142, 715, 515, 10, 119, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36694, 730, 164, 2, 71, "Section"],
+Cell[CellGroupData[{
+Cell[36883, 736, 105, 1, 36, "Subsection"],
+Cell[36991, 739, 424, 10, 47, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37452, 754, 98, 1, 36, "Subsection"],
+Cell[37553, 757, 210, 2, 29, "Text"],
+Cell[37766, 761, 207, 10, 155, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38022, 777, 94, 1, 71, "Section"],
+Cell[38119, 780, 339, 8, 29, "Text"],
+Cell[38461, 790, 404, 9, 29, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38902, 804, 99, 1, 71, "Section"],
+Cell[39004, 807, 314, 6, 29, "Text"],
+Cell[39321, 815, 96, 1, 31, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,1689 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     82499,       1680]
+NotebookOptionsPosition[     59439,       1284]
+NotebookOutlinePosition[     82372,       1674]
+CellTagsIndexPosition[     82329,       1671]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Modeling the Spread of a Contagious Disease",
+ FontSize->54]], "Title",
+ CellChangeTimes->{{3.551083438589768*^9, 3.5510834480034027`*^9}, {
+  3.5510886343652143`*^9, 3.5510886463318963`*^9}, {3.551089883262473*^9, 
+  3.5510898968982515`*^9}, {3.551090248730667*^9, 3.5510902608563595`*^9}}],
+
+Cell[TextData[StyleBox["Arjun Adhia",
+ FontSize->36]], "Subtitle",
+ CellChangeTimes->{{3.5510834783276577`*^9, 3.551083510293962*^9}, {
+  3.5510886487310333`*^9, 3.5510886513551836`*^9}}],
+
+Cell["\<\
+Infection rate is sensitive to key parameters such as intermingling and \
+duration of infection.\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.551083515674074*^9, 3.551083558597457*^9}, 
+   3.5510886615217576`*^9, {3.551090018593042*^9, 3.5510900199531193`*^9}, {
+   3.5510900806494226`*^9, 3.5510901274539623`*^9}, {3.5510901726804605`*^9, 
+   3.55109017530161*^9}, {3.551090321912705*^9, 3.551090410662626*^9}, {
+   3.5510907312629204`*^9, 3.5510908157433677`*^9}, {3.551090863341903*^9, 
+   3.5510908697622633`*^9}, {3.551090909724269*^9, 3.551090919020801*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Code", "Section",
+ CellChangeTimes->{{3.551083589529714*^9, 3.551083596313155*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Refresh", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{"moving", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"w", "=", "1"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Pops", "=", 
+          RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"PopA", " ", "=", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ToString", "[", "k", "]"}], "<>", "\"\<A\>\""}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "1.8"}], "}"}], "]"}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{"2", "Pi"}]}], "}"}], "]"}], ",", "\"\<u\>\"", ",", 
+              "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", "TotalPop"}], "}"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PopB", " ", "=", " ", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ToString", "[", "k", "]"}], "<>", "\"\<B\>\""}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "1.8"}], "}"}], "]"}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{"2", "Pi"}]}], "}"}], "]"}], ",", "\"\<u\>\"", ",", 
+              "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", "TotalPop"}], "}"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"j", "=", "1"}], ",", 
+           RowBox[{"j", "<", 
+            RowBox[{"InfectedA", "+", "1"}]}], ",", 
+           RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "PopA", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], 
+             "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}], "=", 
+            "\"\<i\>\""}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"j", "=", "1"}], ",", 
+           RowBox[{"j", "<", 
+            RowBox[{"InfectedB", "+", "1"}]}], ",", 
+           RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "PopB", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], 
+             "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}], "=", 
+            "\"\<i\>\""}]}], "]"}], ";", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"k", "=", "1"}], ",", 
+           RowBox[{"k", "<", 
+            RowBox[{"Days", "+", "1"}]}], ",", 
+           RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Pops", "=", 
+             RowBox[{"Append", "[", 
+              RowBox[{"Pops", ",", "\[IndentingNewLine]", 
+               RowBox[{"Grid", "[", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"\"\<\>\"", ",", "\[IndentingNewLine]", 
+                    RowBox[{"Image", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Join", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"Circle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ",", "2"}], "]"}], "}"}], 
+                    "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<u\>\""}], "||", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<r\>\""}]}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", "Red", ",", "Blue"}], "]"}]}], 
+                    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Disk", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], "}"}], ",", ".1"}], 
+                    "]"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", 
+                    RowBox[{"Length", "[", "PopA", "]"}]}], "}"}]}], 
+                    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+                    "]"}], "\[IndentingNewLine]", "]"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<City A\>\"", ",", "\"\<Title\>\"", ",", "20"}], 
+                    "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Latent       \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<n\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Blue", ",", 
+                    "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Contagious   \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<i\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Red", ",", "Bold"}],
+                     "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Susceptible  \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<u\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], "]"}],
+                     ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Recovered    \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<r\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], 
+                    "]"}]}], "}"}], "\[IndentingNewLine]", "]"}]}], "}"}], 
+                   ",", "\[IndentingNewLine]", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<\>\"", ",", "\[IndentingNewLine]", 
+                    RowBox[{"Image", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Join", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"Circle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ",", "2"}], "]"}], "}"}], 
+                    "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<u\>\""}], "||", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<r\>\""}]}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", "Red", ",", "Blue"}], "]"}]}], 
+                    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Disk", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], "}"}], ",", ".1"}], 
+                    "]"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", 
+                    RowBox[{"Length", "[", "PopB", "]"}]}], "}"}]}], 
+                    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+                    "]"}], "\[IndentingNewLine]", "]"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<City B\>\"", ",", "\"\<Title\>\"", ",", "20"}], 
+                    "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Latent       \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<n\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Blue", ",", 
+                    "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Contagious   \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<i\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Red", ",", "Bold"}],
+                     "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Susceptible  \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<u\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], "]"}],
+                     ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Recovered    \>\"", "<>", "\"\<=\>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<r\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], 
+                    "]"}]}], "}"}], "\[IndentingNewLine]", "]"}]}], 
+                    "\[IndentingNewLine]", "}"}]}], "}"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Spacings", "\[Rule]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"10", ",", "2"}], "}"}], ",", "1.8"}], "}"}]}]}], 
+                "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+              "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopA", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Which", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "Recovery"}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<r\>\""}]}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", 
+                   RowBox[{"Incubation", "-", "1"}]}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<n\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<i\>\""}]}]}], 
+                "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+             "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopB", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Which", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "Recovery"}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<r\>\""}]}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", 
+                   RowBox[{"Incubation", "-", "1"}]}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<n\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<i\>\""}]}]}], 
+                "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+             "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopA", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "||", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", " ", 
+                  "\"\<n\>\""}]}], ",", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                  "PopA", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                  "\[RightDoubleBracket]"}], "=", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                   "\[RightDoubleBracket]"}], "+", "1"}]}]}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopB", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "||", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", " ", 
+                  "\"\<n\>\""}]}], ",", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                  "PopB", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                  "\[RightDoubleBracket]"}], "=", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                   "\[RightDoubleBracket]"}], "+", "1"}]}]}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", 
+            RowBox[{"TotalPeopleA", " ", "=", " ", 
+             RowBox[{"Length", "[", "PopA", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PeopleMetA", " ", "=", " ", 
+             RowBox[{"Random", "[", 
+              RowBox[{"Integer", ",", 
+               RowBox[{"{", 
+                RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"TotalPeopleB", " ", "=", " ", 
+             RowBox[{"Length", "[", "PopB", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PeopleMetB", " ", "=", " ", 
+             RowBox[{"Random", "[", 
+              RowBox[{"Integer", ",", 
+               RowBox[{"{", 
+                RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"For", "[", 
+              RowBox[{
+               RowBox[{"j", "=", "1"}], ",", 
+               RowBox[{"j", "<", 
+                RowBox[{"TotalPeopleA", "+", "1"}]}], ",", " ", 
+               RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"i", "=", "0"}], ",", 
+                 RowBox[{"i", "<", "PeopleMetA"}], ",", 
+                 RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"ContactA", " ", "=", 
+                   RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "TotalPeopleA"}], "}"}]}], "]"}]}], ";",
+                   "\[IndentingNewLine]", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "100"}], "}"}]}], "]"}], "<", " ", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Real", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "]"}], "<", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}]}], 
+                   "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+                "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+             RowBox[{"For", "[", 
+              RowBox[{
+               RowBox[{"j", "=", "1"}], ",", 
+               RowBox[{"j", "<", 
+                RowBox[{"TotalPeopleB", "+", "1"}]}], ",", " ", 
+               RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"i", "=", "0"}], ",", 
+                 RowBox[{"i", "<", "PeopleMetB"}], ",", 
+                 RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"ContactB", " ", "=", 
+                   RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "TotalPeopleB"}], "}"}]}], "]"}]}], ";",
+                   "\[IndentingNewLine]", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "100"}], "}"}]}], "]"}], "<", " ", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Real", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "]"}], "<", " ", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}]}], 
+                   "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+                "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"ToA", "=", 
+             RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"ToB", "=", 
+             RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "0"}], ",", 
+              RowBox[{
+               RowBox[{"Length", "[", "ToA", "]"}], "<", "Transfer"}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"j", "=", 
+                RowBox[{"RandomChoice", "[", "PopB", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"ToA", "=", 
+                RowBox[{"Append", "[", 
+                 RowBox[{"ToA", ",", "j"}], "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"PopB", "=", 
+                RowBox[{"Complement", "[", 
+                 RowBox[{"PopB", ",", "ToA"}], "]"}]}]}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "0"}], ",", 
+              RowBox[{
+               RowBox[{"Length", "[", "ToB", "]"}], "<", "Transfer"}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"j", "=", 
+                RowBox[{"RandomChoice", "[", "PopA", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"ToB", "=", 
+                RowBox[{"Append", "[", 
+                 RowBox[{"ToB", ",", "j"}], "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"PopA", "=", 
+                RowBox[{"Complement", "[", 
+                 RowBox[{"PopA", ",", "ToB"}], "]"}]}]}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"PopA", "=", 
+             RowBox[{"Join", "[", 
+              RowBox[{"PopA", ",", "ToA"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PopB", "=", 
+             RowBox[{"Join", "[", 
+              RowBox[{"PopB", ",", "ToB"}], "]"}]}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"moving", "=", "False"}], ";"}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+      "Pops", "\[LeftDoubleBracket]", "w", "\[RightDoubleBracket]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"UpdateInterval", "\[Rule]", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{"moving", ",", "2", ",", "Infinity"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"moving", ",", "False", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"running", ",", "False", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Pops", ",", 
+     RowBox[{"Pane", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Grid", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<\>\"", ",", "\[IndentingNewLine]", 
+             RowBox[{"Image", "[", "\[IndentingNewLine]", 
+              RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+               RowBox[{"{", 
+                RowBox[{"Circle", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", "2"}], "]"}], "}"}], 
+               "\[IndentingNewLine]", "]"}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Column", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<City A\>\"", ",", "\"\<Title\>\"", ",", "20"}], 
+                 "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Latent       \>\"", "<>", "\"\<=\>\""}], ",", 
+                  "Blue", ",", "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Contagious   \>\"", "<>", "\"\<=\>\""}], ",", 
+                  "Red", ",", "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Susceptible  \>\"", "<>", "\"\<=\>\""}], ",", 
+                  RowBox[{"Darker", "[", 
+                   RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], "]"}], 
+                ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Recovered    \>\"", "<>", "\"\<=\>\""}], ",", 
+                  RowBox[{"Darker", "[", 
+                   RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], 
+                 "]"}]}], "}"}], "\[IndentingNewLine]", "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"\"\<\>\"", ",", "\[IndentingNewLine]", 
+             RowBox[{"Image", "[", "\[IndentingNewLine]", 
+              RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+               RowBox[{"{", 
+                RowBox[{"Circle", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", "2"}], "]"}], "}"}], 
+               "\[IndentingNewLine]", "]"}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Column", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<City B\>\"", ",", "\"\<Title\>\"", ",", "20"}], 
+                 "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Latent       \>\"", "<>", "\"\<=\>\""}], ",", 
+                  "Blue", ",", "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Contagious   \>\"", "<>", "\"\<=\>\""}], ",", 
+                  "Red", ",", "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Susceptible  \>\"", "<>", "\"\<=\>\""}], ",", 
+                  RowBox[{"Darker", "[", 
+                   RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], "]"}], 
+                ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"\"\<Recovered    \>\"", "<>", "\"\<=\>\""}], ",", 
+                  RowBox[{"Darker", "[", 
+                   RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], 
+                 "]"}]}], "}"}], "\[IndentingNewLine]", "]"}]}], 
+            "\[IndentingNewLine]", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Spacings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"10", ",", "2"}], "}"}], ",", "1.8"}], "}"}]}]}], 
+        "\[IndentingNewLine]", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"200", ",", "400"}], "}"}]}], "\[IndentingNewLine]", "]"}], 
+     ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"InfectedA", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"InfectedB", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Days", ",", "7", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Recovery", ",", "3", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Incubation", ",", "3", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Infectious", ",", "10", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Transfer", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"w", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"TotalPop", ",", "10", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"j", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{"running", ",", "\"\<reset\>\"", ",", "\"\<run\>\""}], 
+            "]"}], "<>", "\"\< simulation\>\""}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"!", "running"}], ",", 
+              RowBox[{"moving", "=", "True"}]}], "]"}], ",", 
+            RowBox[{"running", "=", 
+             RowBox[{"!", "running"}]}]}], "}"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", " ", "225"}], ",", " ", 
+          RowBox[{"Alignment", "\[Rule]", " ", "Center"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"If", "[", 
+         RowBox[{"running", ",", "\[IndentingNewLine]", 
+          RowBox[{"Column", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Column", "[", 
+               RowBox[{
+                RowBox[{"{", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "10"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", "\"\<day (morning)\>\"", ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Control", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"w", ",", "1", ",", "\"\<\>\""}], "}"}], ",", "1",
+                     ",", "Days", ",", "1", ",", 
+                    RowBox[{
+                    "Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], 
+                    "}"}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+                "Left"}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Column", "[", 
+               RowBox[{
+                RowBox[{"{", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "10"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<duration of simulation = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Days", "]"}]}], "}"}], "]"}], 
+                  ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<city population = \>\"", ",", 
+                    RowBox[{"ToString", "[", "TotalPop", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<initial infected cases, City A = \>\"", ",", 
+                    RowBox[{"ToString", "[", "InfectedA", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<initial infected cases, City B = \>\"", ",", 
+                    RowBox[{"ToString", "[", "InfectedB", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<travellers/day = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Transfer", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<chance of infection on contact = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Infectious", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    "\"\<latency before contagious state [days] = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Incubation", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    "\"\<duration of contagious state [days] = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Recovery", "]"}]}], "}"}], 
+                   "]"}]}], "\[IndentingNewLine]", "}"}], ",", "Right"}], 
+               "]"}]}], "\[IndentingNewLine]", "}"}], ",", "Center"}], "]"}], 
+          "\[IndentingNewLine]", ",", "\"\<\>\""}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", "running"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Column", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+             "\"\<duration of simulation [days]\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Days", ",", "7", ",", "\"\<\>\""}], "}"}], ",", 
+                 "1", ",", "21", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<city population\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"TotalPop", ",", "10", ",", "\"\<\>\""}], "}"}], 
+                 ",", "1", ",", "100", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<initial infected cases, City A\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"InfectedA", ",", "1", ",", "\"\<\>\""}], "}"}], 
+                 ",", "0", ",", "TotalPop", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<initial infected cases, City B\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"InfectedB", ",", "1", ",", "\"\<\>\""}], "}"}], 
+                 ",", "0", ",", "TotalPop", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<travellers/day\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Transfer", ",", "0", ",", "\"\<\>\""}], "}"}], ",",
+                  "0", ",", "TotalPop", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<chance of infection on contact\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Infectious", ",", ".1", ",", "\"\<\>\""}], "}"}], 
+                 ",", "0", ",", "1", ",", ".01", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<latency before contagious state [days]\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Incubation", ",", "3", ",", "\"\<\>\""}], "}"}], 
+                 ",", "1", ",", "7", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<duration of contagious state [days]\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Recovery", ",", "3", ",", "\"\<\>\""}], "}"}], ",",
+                  "1", ",", "7", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", "Left", 
+            ",", ".45"}], "]"}], "\[IndentingNewLine]", ",", "\"\<\>\""}], 
+         "]"}]}]}], "\[IndentingNewLine]", "}"}], ",", "Center"}], "]"}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}], ",", 
+   RowBox[{"ContentSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"340", ",", "400"}], "}"}]}], ",", 
+   RowBox[{"FrameMargins", "\[Rule]", " ", "0"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.551083682265842*^9, 3.551083718350423*^9}, 
+   3.5510886882462354`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->{
+  Cell[
+   BoxData[
+    GraphicsBox[
+     TagBox[
+      RasterBox[CompressedData["
+1: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
+Nh/lymQjP3a9U60aavDyCu0buOfm0jbMlhWzdGC7qu1SXVRH1X17u3/AjcaA
+qk3Ub01Uxw3RHZXj82XD5bJutt7V+LVPvc6LSakDAAAAAAAA8Gv4x1YAAAAA
+AADAFITmdeMCtB8MVtdemej/8s9f+bqs/zeHY7okScD6/rVQpPmfpn2Hm3iT
+q9q9A/9vbtqXWZ135+sw5KY2T04yaIcRuXzqe3Lmdk/3ekSaVYN1xgG/UUOd
+uU0fbxsfB63HmMFh6xFpdm/46tn6KODkT/Otmys/TXvkJ66LGyq9QGeY7Q1R
+vTbOlkOxodmG7/l2I0e9cpbehyTbpQpY125sV+yAaktVyxo6qja+jkUjz7za
+OP98m/cZxfz61FznxcT9V6pRAAAAAAAAoKywEAAAAAAAAGhdoYlTfV5uRHvf
+GbnmPx24jZ5iw29DDunN//3n8VX5+Obd8zcnfQ3ko90x69Jp24i53M0++p+/
+q7hFqpJgef5iZnaHm3mT//jVn9xtvvzzVwf+n5w5mmrvu6v+yU8Hp3eZ1Xng
+an0g8HbzFN858sz35Fy3TK7Wisvl+J3ywjx9Xdl3k4z1SbHT0/3APH1I7A6j
++6Y2OXpr5ERqFrPZtnbZc7Xnluq1qXzXNNgmj14XOdQj1+gG213tg1PXY0zf
+sKqx2pyTi+Kc6Kyu+2u3yt1znQaqpE1XVPE0B7/uWYUa6tAtzsj3f8sZebMR
+/T19W+RQL35fx27dG6K67L0mbvZG7Xlw09Q+JNmuJ//CiBa7Rs706le++qp+
+Eexfig1tuqW74/M3Oh2Vx64P6ajuqja+jsdceWb3RsX/+tRc50Wj2OHQqeZO
+AAAAAAAAwNLwD68AAAAAAACAKYg6RDc8WfrTwdDG8YHb/N9/Hj7FeH/yOvf8
+zcnkMwbXNY2R5pihGrXDTbvJvgTyl3/+yheKVuX99svfu9vEhL2na5lxVs/W
+xyzbyUw1bHFx+W6HlJboGPPJRVaeOdi9TpFmVZIqLDRwqy66a04eaZ76mL5h
+1UJeullKXRVU1X20R4oDcv+VTpt1s/WZw0ke5cEbdWM7K3vXFXJOPb5eZ+RC
+vzx4tRP9VU/kkeiI8t5rZLN3Q9TIa2ZJakFkl0btuVqaWqlar3vTjke/FG27
+rnRevXuvdhL76qv6Rbi3/BRUG9UyquN9V0p+mdMx3xPX8ch8WV9+RnfPlf3z
+nER3zK9PzXVeNIg0AwAAAAAAIEp+IQAAAAAAANC6rv48PHB7/A8Xgo3VxdDG
+apDIKcb6Q7voBOy/P5m8TtU46Yxh64qZy91MR5qnMFRjdriJN9m3nA2/PRwy
+zoVBdxsde67zMiO9ebM+2XV7OQj69u3hzYpdOkUZessXaX771si5fJFm9623
+A1FYM3D78LUh46iLG71H+4ZOXY8xfcOqhR/8QXUbnqR7oUNe/pfOCcCDbfLC
+9xMN/thfuKK/c+TwbTqd7hs51e1knre2y4bLw4caWaDTy76ThM0N3HdDotXN
+8J6rlb4y3xkt4aatKx99rJPSt/jv2k9BfVUt/R3brVsHfqg31r3J6kpUR3st
+d10hZ5fIu3c4oe6YX5+a67w4qC1108HmTgAAAAAAAMDS8M+vAAAAAAAAgCmI
+Ctyqf3Jh0NM4OlAak331pWS//PNX9ve//fL3yeucmUjzhzMYaZ6uHW7mTVb7
+GbfesmN/uKBa2qKaTdcyI/nCokd/XPUIdYo02wf8nrrN03JkQcjRvgkjzVMf
+M7hjavlT2fCo7sdud3Y1+Sz3X+2sQvU61xHSptApz90kj1+vPXa97L1Wn5Yc
+bLbvBk/eePdczznASVY383tew6ad6NQnkCsnFslQ4G8fB3/gVLihzXNrQ5uz
+uoM/DHT8YWRHcy0PXaXzzMXF+jduc4Jfn5rrvAiQZwYAAAAAAEC83EIAAAAA
+AACgdV3zi8jA7bE/XHC39AVK3f/UIFHj//Yffu9kUP/xqw2/OezJuL4/mLBO
+3+wxM4auS6dtI1q6m+k87RSGasgON/Mmq2I8lUzttTpdy4x05Ef6PNvtxmm6
+m9plzzVVj7B/ns5kmiOoodSAUS03lCfa2i4PXB1Zhm2bkc986FpPy+e+py9u
+m+NvHJy6HmP6hlULV8uvecNjuh/6oX4c1c4y+HW9t3bx+YgP80f7ZHzAEdps
+55XOY901V966XbaWn93aNjl5W+XVzfyeH/mxTgVXtWmFLkdwH3a5N+HK8Bdz
+6ETuXwrV0reWe78j+V4pLPYvLebXp+Y6LwL5DodONXdqDf8zGQAAAAAAAJpH
+wz/CAgAAAAAAAKYgJnDriYmO9fviqYmyr+8PupvpBK/3IOLk8eCLMtI8DTvc
+3Jvsvvvbf/j9lF6r07fMSIUuJ1G5pV3WtOks68vzZGhB0hHqF2k2S1o12wnQ
+Di+QdXOc6WqINE9xzNxMRZrv/Y5Tkvrm6O2JBl8/2wkJ33dV7a8KtTlr26x0
+tBrwuZsk0+XUs7FN9t1YeXUzv+dP3+CJNL98S+07oLwyz7MJT38//MVcbaT5
+zJ06z5zvCFla/K9PbXW2utA8M5FmAAAAAAAAuDX8UywAAAAAAABgCnypVF+q
+1o6J+sKuvmZR2df9/ykXbJb7b5/bV/741Z8S1jnFtK2a6MP/+btQ7mZJIs0x
+QykbfnN4Jne4qTY5PtIcurfJTeMy4zxxg5WD3WbkM9e2ycAs6b1Mer4m26+U
+3d/WSdGj8yO71yPSfPdczwG/doD2ue95Urt2sySR5mkZ0zfslnbZOleHwLeH
+2fZNeSGQL62YzlVbrQa0Q6ra13XyPMmjtHdYLaeGA7edl8Rf6NyyvcZjC3Sg
+1H6dqLI3XxHecQb2PCrSfPhmnZreUt60Te1yriPRYkO9M1/WtnsmHfI+gpoj
+zflOJ8+cm3KkuWKdLcqdZOaIZgAAAAAAAMTLLgQAAAAAAABa17WfeVKp+/9T
+zh2mVd/LaL/iu+jLl6pBQgf/41d/8iROjYsbfnPY3Vd+vjtJnXv+3ckkM0at
+K+E/Hbud2lCqzpnc4aba5ODaK+5tctO4zDinOmXnFU6mdGu7joNubNNRzLVt
+Oia6wkg4b79S3rg5pHsw0hw1kS/S7L7lDnZumyOHbpZdc52U5vo5+tToIe/R
+vqqBarZtTuTU9RjTN+xWo43apTWzQqite/6muO76WOxyetzWf5k+K9suSRXz
+0vykj9Kzw9fU/pLYMtcp4O4rdaBaXXztVitlrVatlvzOrSEdZ2DPVcf7rpJn
+btBJe9vu78jyWbqNPc5D10mu1r9lqAq3fkNv5tbyQl651T+aL9Ic80uhWsbM
+FYw0T2+dLSfXEU6nmjs166DmRQAAAAAAAICl4R9qAQAAAAAAAFMQTKX6cq1J
+roRmX4NRXuvWaL/7+rE/XEhS50UTaZ7GHW62Ta5fpHl6lxknv1iO3iG7XKlm
+J95sxG43GwnnNbN02vaF7/u7T3ukWc340s3yynzn7Oj1s/W5vu6jfXV6c75u
+tiV66nqMmQ0cRLzNWE4o1SwYdvWFfjeX0+Mm9f2g63xm1WDfTVLqSfooY3Y4
+uTdulnWzrZSs+rr/h9b1dJfOuts78/B1IX1nYM/V0jaUk/amlbP1i3OwnOxV
+dl4hw0tq/43YPNc5JVtV+NQNIY+gGSLNSepsOQkjzcVFAAAAAAAAgCWzEAAA
+AAAAAGhdIanUkv/EYPcBufpU4VJ/SPY1MPKxP1xwt5Gf7bZv5f7b554BE9SZ
+ZMaYdSX89+H/+N0Uh9IbOFM73GybHFx7xb1NaHqXWUGhW1LLZN88fWTutjnh
+trTL+nZZ3S7v3ebp+8I8nXQ122w0MplRs6xvd4a6/2rPLdVrY5t1V4124AeS
+XiI7rnCubJwjW+c6E6lbqoFqFjN1Pcb0DRtPjaM2p+bu6lm8cquM9lXxHGN2
+OLmHr/Ps24ny9WyHPH6Djg2bSez1l4f0nZk932IcJO6mrmwt3915hZxZItnO
+Gpe/5xpZPVsv0Bxtz9WS7Ynb6tCn7P6lUC1jpnMvLf7Xp7Y6W456mQXpVHOn
+RQebG33sDwAAAAAAAJpKwz/UAgAAAAAAAKYgNJXqi7ZWbBCafXWndv/41Z/c
+tzb868Pu7p1f7K9Y5xTTth/+j9+ZRx8HVYzdJh9KCRZWvx1utk2uX6R5epdZ
+WbZTp2cnVsm5bnnzdnn1Vnl+njx2vTfVPEef3/v4X3g61iPSvP8HOsf40nwr
+p7p1Tjm5Wv5R3VIN9lcTaZ6WMTOBeK3aIrVXoV6+VY7eXqF7TID87BIpVhlS
+nZZI8/rLnaDsXVdKbrFzSy1qS7u1XeqV8HJsYLt+ex7j0ev1vrlrrsrTN+gz
+n92J63yvrjBmqxsSaU5eZ6sITTI7eeaOcpiZPDMAAAAAAAAC0gsBAAAAAACA
+1nXdp55U6t5/e1JfL3qOEbb/6VNwi/2qgWrmvq4G8Q3b+cX+kGFtxX733dzf
+fV6xzoozJlpXGH/sdgpDzeQOt8QmV9zbJKZ9mVXIdklhqQ7TlvpkbEAmVxtB
+ViOAqgy2y44rPe1fmKcvmnc3tMlbP4oceV252WYjcOu+pXqpvvYUakx9vUu2
+z7Uubp3j1KAuqlsVp67HmL5h1UIO3aL3KkpuSVx3NbvaW7XDpkeudwpTNagf
+q312MTuc0EvzZG2btS2b58ihf+m5m+oyjlkub87918Strk57rtz7bR1d9lE7
+ea5bv2KzXTW+8p//viyfpScyK9xhnPac6aiw1c4yI34pVMuYSd1LU98c+fE0
+1znD3GWo7ytWZTYwW0bRweZOzTqleZFhMQAAAAAAAGBp+MdiAAAAAAAAwBRc
+7U2lPlDOi67/a8/ht767D3izr1cHsq+5v/vc3eDYHy6oLm5//OpP7gZmjjdG
+xRkTriuoYuw2+VAzucMtscn+05VreolO+zKnpNgjT9zgxFxXt3nu1i/SnOmQ
+12/TM26d4wnEvjRfzCRkDZHmKY4ZHHb/D6rbTHf3Te1ywNX9+J16Z+xbK2fL
+e7dVN/jmK5wd3vaNWp71/dd4ynv8u/pA4CfLnv2e7LrSmUJVeHbBTO+5Gufl
++Tq67KNepTWHmZUj82V1u5MTVrMcvSNuwHpEmjfOqRxprrbOegtmmO0kc/DH
+0JYVwszePHNukRVpLiwGAAAAAAAALI36cAwAAAAAAACYDjGpVF9SVEdSy2HR
+CtlX78G5Sf6t/+vD8XVefJHmKe1wi2yy2k93g6iw8YH/mFMtbfLB7rouc6oO
+3uykbX0RTV8e9eAPw0d477bqT2leqM+Lvutbnijs3d+yjvYNTp3olOapjRkz
+bEIx3XNL5KHrnMSv2q4Hr61u8D3XWklX9XVNmz9vbNOzfFO2Xqlt+aZOyZrX
+VfuVs50Hrb5Z2yYrZsvALMuq2c4pzWaF+2+a6T3fVH2MvKJ3b5OVbXo5m8tL
+O3y75LvjutQv0hxzuHENddZPwljyVAQjzfYRzQ3/MxkAAAAAAACaR2ohAAAA
+AAAA0Lqu+SSQSi3f8h0jrJOi5Vu+7KsaxD1m6PnD8f9+8w+/j68zfsaq1uXj
+bqbztFMYasZ2uFU2+dh/vhC1QMfEoK/Oei+zgjMLKjR4+kZPRNN96+3bnVvq
+m7u/Ez7CMze6Dtpt1xlp9903vVHY5+c5t17/sXPAr/pG/ZjusG49743CqkHq
+PWb8sEnEdw8e1HxkfhWDP/k9p/v6dnnhppA2794mfUY42TQwS5/xa95S7dXD
+3eIKLavRBl02tXsOW1ZXtn2zBfa84ot/0zd0AtzcOrXqZ2+S/NIKvdyRZvXb
+4bsb8/sSsjTV7HJj7XPkLWNbzJ2x92cqddaJWWT9WKnmTocONi/SpzTnGv0/
+YwoAAAAAAIBm05CPyAAAAAAAAIBpEp9K/S//xzpGWH3jvh6fff3NP/y+2hiq
+DrJODMbUeVFGmmve4VbZZF8g+ct//EqfwOxuU+j3LST3d5/Xe5lxziyQDVfo
+03qP3xbe4MiPZP3lOs5qRjT3Xuu5m10iW69wssqr2+T57/tHeGu+rJ3jST6/
+e4enQUxmNe864Fd9485w1hxprnnM+GGTiO+e9R7UvL5ddn2risFfnu88JjX4
+mna9875nvfkbxjG/BtX40e86d7d901l7Eubjfve2RKtr4J7H2/0dvYpN5Zzw
+E9+TUl/lXvde5STPt8z1/D8FqO/VFftBqJaVXw+Xa+5Is22KdU6XemeYY/LM
+WXeeeVHj/0AGAAAAAACAZjOyEAAAAAAAAGhd137sSaXu+d3JJL1UM3cvNYhz
+d3zQfeu//J8/qcahfEf4xk8dN+PU1uVupiPNlYZSZasr8eq7wy21yXZm2/z3
+5T9+deA/5MxdUu19d/2T1meZkU4vkI1zZflsWTFbll0m66+QJ26Qgz+QV2/R
+1Df3XSMr240QrBGk3NQur9zqH+TQfOvuFiOSOjBbtl4pz37fGaF3ljOCsvc6
+yXR5RjCDnebdjXN0ZtXz6FfK5GpNfeO+rpptdM2rBqn3mMFhH/2utVdRXrml
+iqp0g9uNlGx5t1fOltdu8beJkl8qu64s971c1rbrZ/fQdVYl6smuvVxWtTnj
+D7bLO3dYfY/f5rm1+9vy6q36WQftm+c8ynXGGcUzvOfBTauZenGqV749+/1X
+S6YnUceDt1h7pfZ5TZts/5Ycu11fV193X6WvqOvm3X0/iBvHE2lWa/+xpDo8
+VBv1teY6a+aefSY52eZOi5VtXqRTzdkufUqzPqh5CQAAAAAAAGCp6wdlAAAA
+AAAAQJ1Ne+DWdytuwHy/L7Ba24xTXJe7WZJIc5J/dd3h1trkqnbvwH/IzcAy
+w5l55lVtOio52K7PBF5lBJL7ZknvZZr6ZsVsHVu1k673XaVzs75xUl1y39VW
+g81GKlWN0z9LJ5mDI2yfKycX+UeoLbM6lUhzbWP6ht1kHFPcX96uUEsvq66q
+XLcTS7YOav52Fc/03Q5PIlrt/PLZ+kEo6smuadMP2n5S+2/W50KbHZ++UTe2
+49AvzZdCT7j0UmcQ/cq5Ykb3fHojzWpPNsyxEtqby4H8nsuk+2t+XV/zdDzT
+KdvmOslw9YJfZjxr9dX8hTJvqTZnYk+JqRhpNtVcZ80Sxo9DA8lTSjK7wsz+
+PHM50pwn0gwAAAAAAACX6fq0EAAAAAAAAGiEaQ/c+s7dlfHBmHFyf/e5p/EH
+u2uYcYrrcjdrlUhza23yhl8fTrJpx/7zBV/HOi0zXKpDDtzixC/NEKz6cYOR
+mdSMuKZ9JO8DV0uuN3wcdf2BqwPjBEbYcYWcWeI/onmkZSPNm43VOdsVZuXs
+qqt67cfWGb81HNScXSKHb3c23KrQqGTjHGdYdf3Zm6TgepqDVzgLV9+c6Yx7
+2Tx2Q/nU7st1qPvIj6pY3RT3fHojzWvanL0yd3u9kQMPWuF9julOef02Zz/N
+TV5ndLdf8OquapOO3knf0tQLKSrSvNYYc+vlVddZlYTHMqcTSBJvToeOGcwz
+uyLNdp650AUAAAAAAABYhhcCAAAAAAAArSsklZqgV0j21bz1093u67/537+v
+apwDf5uresYpr8vd7MM//a7iUEn+1XGHW3OTVUtfPtn3L6Rv3ZYZKd8jZ7vl
+keudVGeozXPk4C1GnrkjfJwRI9X83DxPQNTn4et1njkd9gmzL7O6b16i4vcF
+orD1HtM3bBLr2quuKrdUdn3Lc1Dzzm9X8UxV9xOLZPe3IktSz+iVW6XY53R5
+60c6mWwHdO+9SlKdcVMcuNk5C1qV99h3Z27Pkw+bhH0wdbXP0dznd+6UHd8I
+b6+uH75dt4kvwFna161Is/pVClpnNHDMKX9NUGcM969z6Ly2VPmr1hkQerGz
+moOaA32dbPNiHWnOGEc0m6c05xp97A8AAAAAAACaynR9WggAAAAAAAA0wlXT
+Ebi9qpx93f+3uepGGxt0t//yH7+qdsapr8vdLDTSfNXUIs3Tu8MtusmmDb8+
+nPuvn/+hnG1WlagN173GBoON67fMOOkuGR2QdK+OuT5yvdzzbU8sU11R19Xd
+QnSe2aTuFvt0y4O3eDLSe67RGdQTi4xZIk7MINLsEzyo+dVbqnimmSUyvlLe
+vF2e/J7zQN1PM9/jaf/Yd3Uy2Z7uYKW5Tnd6jnRec/nM7XnzRJqVbLcUBqxf
+HLulucnqesU883DNkeavT1ukuaLIGHMSwdBybIw5JM9sRpoXW3lmHWleQqQZ
+AAAAAAAAHtP1aSEAAAAAAABQb0ML5eydcuYOOX1nnFNhTt6RyIkoPwn33oJI
+707N8Z/U4lgrq23JU9znmCcY9dCjXiQJX2PBF2f86/m08Zo/d6d+/Sf8TUkt
+0jHX0QEdhZ1cbZlYpa+o6+pu8nEKvbqXPcjYch11zsR+sKzu2u0VX+A2imrm
+7uWboh5jBodNooaqckv9g8RvYNQgpX7ngcY8TfXIqtorNYK7vRp5Jvc84bBJ
+1PwcbSMd1i+O3czc5Pj8f9TSst3hueKp1zlcPpO5ihhzdPA4Ha3G8HNEmNnM
+M9uRZueI5m4AAAAAAADAMl2fFgIAAAAAAAD1NmTEO90B4/cWyNkOKfU5hhYl
+CgmfXST5XsephVaq9txiyfU6TnfKOz/xO3q749gCySxzpHs8d91Odui7plSP
+vHuHvH1bnON36Ga2Ews9d4+4jCx1nO3y3DKpIt1tkojp/t7CkCmCVDN3LzWI
+fetERxUDqsUe/YlnK1SXqE1Tm+xuaW9y1ENRDdyP71RHZEvz0asGQ12SXirZ
+ZZZUt5zp1A8rmNAeWqzDpTb1kosPYJ+40/NKVuzX+ck7dKo5eaQZQMMlyRvX
+T2iMOSa9nFDVSeaIPLN5RHOeSDMAAAAAAAC8hhYCAAAAAAAAreFch3FK80LN
+PsB2eJFMDFjGByS9JPyUZs+JzXdKqkvG+h3nOq0TdM90yGi/I98Tfh7ve2XD
+i/WhtbaRrvKtwJG/Q+WWZsD1dEeF04NPdXhC1+cWyfEF4dzNUt0hDU4u9OS0
+k4jpfja6EjfVzN1LDWLfOnGn51ZmaYWhznnz52on7Vu+TTvnTRG7Nzn0HGbV
+wP341NN87w4/84mf7ZTCMn/k2P1SUY/eOof5TsvZDs9rrLiswstSvXTtV7KS
+7S4f0Wy84M/e2fhfQADJDXc2jE41L/LwRI4XV5DwEObgFMG5fNNluiw61bxE
+p5pzjf4bGQAAAAAAAJpKwz/WAwAAAAAAAKYi0yUXVsj7y/VXpbA0US/VzGxv
+UoPYtyYHPLdGFsWNM9rraZxeXMuMMeuyxazL3Wyst/JQSdRWSfL1ttYm57oT
+bVppmb9jnZYJoPk1IMbc4Qkzh5yfXCnMPPWcc/x07jyzGWlu+N/IAAAAAAAA
+0FQa/rEeAAAAAAAAMBWZLp1ntiX8yCu/1NPLnX1VIyQccLjT03Kiv8YZE60r
+OkjsbhYVaXa3SWIadrg7br3+TY5enW+TJ+M3OXbS2l48Ve1ecWlcPclfS/HL
+BNASZi7GHH0sc8Wssn1ysjK98eaoiZwjms1I81IAAAAAAADAMtQBAAAAAAAA
+tLBMl5wfcOjUaIJeqpm7l86+lm+NLPLcmuiPPC6g2FPF1DEzTnFd7majvZWH
+UmW7M2yh6rrDrbXJqjZ3m8l+fZizuUuqve/uzLyWADS/hIHk2jPM0THmqCRz
+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
+ei0AAAAAAACA4f8HRV7FGA==
+       "], {{0, 128}, {3825, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+      BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+      Selectable -> False], BaseStyle -> "ImageGraphics", 
+     ImageSizeRaw -> {3825, 128}, PlotRange -> {{0, 3825}, {0, 128}}, 
+     ImageSize -> {1455, 52}]], "DockedCell", Background -> None, 
+   ImageMargins -> 0, CellMargins -> {{0, 0}, {0, 0}}, 
+   CellFrameMargins -> {{0, 0}, {0, 0}}]},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 315, 4, 103, "Title"],
+Cell[897, 28, 187, 3, 63, "Subtitle"],
+Cell[1087, 33, 572, 9, 28, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1684, 46, 89, 1, 71, "Section"],
+Cell[1776, 49, 57635, 1231, 4792, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

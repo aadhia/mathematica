@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2560,         83]
+NotebookOptionsPosition[      2318,         70]
+NotebookOutlinePosition[      2661,         85]
+CellTagsIndexPosition[      2618,         82]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MinMax", "[", 
+   RowBox[{"expr_", ",", " ", "x_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solutions", "=", 
+     RowBox[{"Reverse", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Maximize", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"expr", ",", 
+             RowBox[{
+              RowBox[{"-", "10"}], "\[LessEqual]", " ", "x", "\[LessEqual]", 
+              " ", "10"}]}], "}"}], ",", "x"}], "]"}], ",", " ", 
+         RowBox[{"Minimize", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"expr", ",", 
+             RowBox[{
+              RowBox[{"-", "10"}], "\[LessEqual]", " ", "x", "\[LessEqual]", 
+              " ", "10"}]}], "}"}], ",", "x"}], "]"}]}], "}"}], ",", "2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Solutions", " ", "=", 
+     RowBox[{"ReplaceAll", "[", 
+      RowBox[{"Solutions", ",", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", "\[Rule]", " ", "a_"}], "}"}], "\[Rule]", "a"}], 
+        ")"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "Solutions", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{"expr", ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+      RowBox[{"Epilog", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"PointSize", "[", "Large", "]"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Map", "[", 
+           RowBox[{"Point", ",", "Solutions"}], "]"}], "}"}]}], "}"}]}]}], 
+     "]"}]}], "\[IndentingNewLine]", ")"}]}]], "Input"]
+},
+WindowSize->{707, 505},
+WindowMargins->{{24, Automatic}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1757, 48, 172, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,2584 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    116149,       2575]
+NotebookOptionsPosition[    112133,       2444]
+NotebookOutlinePosition[    113781,       2495]
+CellTagsIndexPosition[    113393,       2483]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"To", " ", "Do"}], "\[IndentingNewLine]", "-", " ", 
+    RowBox[{
+    "Include", " ", "a", " ", "True", " ", "False", " ", "loop", " ", "for", 
+     " ", "days"}], "\[IndentingNewLine]", "-", " ", 
+    RowBox[{"make", " ", "disc", " ", "represent", " ", "10", " ", "people"}],
+     "\[IndentingNewLine]", "-", 
+    RowBox[{"To", " ", "put", " ", "play", " ", "button"}]}], ",", " ", 
+   RowBox[{
+   "make", " ", "the", " ", "day", " ", "slider", " ", 
+    "disappear"}]}]}]], "Input",
+ CellChangeTimes->{{3.5503546811293025`*^9, 3.5503547150482426`*^9}, {
+  3.550404195920215*^9, 3.550404214558281*^9}, {3.5504196615433216`*^9, 
+  3.5504196638294525`*^9}, {3.5505776386273403`*^9, 3.5505776389273405`*^9}, {
+  3.550698464155487*^9, 3.5506984838446865`*^9}, {3.550698551890537*^9, 
+  3.550698558995547*^9}, {3.5508515219213057`*^9, 3.5508515372511826`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Refresh", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{"moving", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"w", "=", "1"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Clear", " ", "[", "Pops", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Pops", "=", 
+          RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"PopA", " ", "=", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"k", "*", "A"}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "1.8"}], "}"}], "]"}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{"2", "Pi"}]}], "}"}], "]"}], ",", "\"\<u\>\"", ",", 
+              "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", "TotalPop"}], "}"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PopB", " ", "=", " ", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"k", "*", "B"}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "1.8"}], "}"}], "]"}], ",", 
+              RowBox[{"RandomReal", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{"2", "Pi"}]}], "}"}], "]"}], ",", "\"\<u\>\"", ",", 
+              "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", "TotalPop"}], "}"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"j", "=", "1"}], ",", 
+           RowBox[{"j", "<", 
+            RowBox[{"InfectedA", "+", "1"}]}], ",", 
+           RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "PopA", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], 
+             "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}], "=", 
+            "\"\<i\>\""}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"j", "=", "1"}], ",", 
+           RowBox[{"j", "<", 
+            RowBox[{"InfectedB", "+", "1"}]}], ",", 
+           RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "PopB", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], 
+             "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}], "=", 
+            "\"\<i\>\""}]}], "]"}], ";", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"k", "=", "1"}], ",", 
+           RowBox[{"k", "<", 
+            RowBox[{"Days", "+", "1"}]}], ",", 
+           RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Pops", "=", 
+             RowBox[{"Append", "[", 
+              RowBox[{"Pops", ",", "\[IndentingNewLine]", 
+               RowBox[{"Grid", "[", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"\"\<\>\"", ",", "\[IndentingNewLine]", 
+                    RowBox[{"Image", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Join", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"Circle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ",", "2"}], "]"}], "}"}], 
+                    "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<u\>\""}], "||", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<r\>\""}]}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", "Red", ",", "Blue"}], "]"}]}], 
+                    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Disk", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], "}"}], ",", ".1"}], 
+                    "]"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", 
+                    RowBox[{"Length", "[", "PopA", "]"}]}], "}"}]}], 
+                    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+                    "]"}], "\[IndentingNewLine]", "]"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<City A\>\"", ",", "\"\<Title\>\"", ",", "16"}], 
+                    "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Latent =      \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<n\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Blue", ",", 
+                    "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Contagious =  \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<i\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Red", ",", "Bold"}],
+                     "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Susceptible = \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<u\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], "]"}],
+                     ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Recovered =   \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopA", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<r\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], 
+                    "]"}]}], "}"}], "\[IndentingNewLine]", "]"}]}], "}"}], 
+                   ",", "\[IndentingNewLine]", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<\>\"", ",", "\[IndentingNewLine]", 
+                    RowBox[{"Image", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Join", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"{", 
+                    RowBox[{"Circle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ",", "2"}], "]"}], "}"}], 
+                    "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<u\>\""}], "||", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<r\>\""}]}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", "Red", ",", "Blue"}], "]"}]}], 
+                    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Disk", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "2", 
+                    "\[RightDoubleBracket]"}], "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "3", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], "}"}], ",", ".1"}], 
+                    "]"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", 
+                    RowBox[{"Length", "[", "PopB", "]"}]}], "}"}]}], 
+                    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+                    "]"}], "\[IndentingNewLine]", "]"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<City B\>\"", ",", "\"\<Title\>\"", ",", "16"}], 
+                    "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Latent =      \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<n\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Blue", ",", 
+                    "Bold"}], "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Contagious =  \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<i\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", "Red", ",", "Bold"}],
+                     "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Susceptible = \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<u\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], "]"}],
+                     ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<Recovered =   \>\"", "<>", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{"PopB", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "_", ",", "_", ",", "_", ",", "\"\<r\>\"", ",", "_"}], 
+                    "}"}]}], "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{"Darker", "[", 
+                    RowBox[{"Green", ",", ".5"}], "]"}], ",", "Bold"}], 
+                    "]"}]}], "}"}], "\[IndentingNewLine]", "]"}]}], 
+                    "\[IndentingNewLine]", "}"}]}], "}"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Spacings", "\[Rule]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"10", ",", "2"}], "}"}], ",", "1.8"}], "}"}]}]}], 
+                "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+              "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopA", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Which", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "Recovery"}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<r\>\""}]}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", 
+                   RowBox[{"Incubation", "-", "1"}]}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<n\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<i\>\""}]}]}], 
+                "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+             "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopB", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Which", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "Recovery"}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<r\>\""}]}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", 
+                   RowBox[{"Incubation", "-", "1"}]}], "&&", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<n\>\""}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                    "\[RightDoubleBracket]"}], "=", "0"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<i\>\""}]}]}], 
+                "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+             "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopA", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "||", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", " ", 
+                  "\"\<n\>\""}]}], ",", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                  "PopA", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                  "\[RightDoubleBracket]"}], "=", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopA", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                   "\[RightDoubleBracket]"}], "+", "1"}]}]}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "1"}], ",", 
+              RowBox[{"i", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "PopB", "]"}], "+", "1"}]}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "||", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                   "\[RightDoubleBracket]"}], "\[Equal]", " ", 
+                  "\"\<n\>\""}]}], ",", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                  "PopB", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                  "\[RightDoubleBracket]"}], "=", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "PopB", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "5", 
+                   "\[RightDoubleBracket]"}], "+", "1"}]}]}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", 
+            RowBox[{"TotalPeopleA", " ", "=", " ", 
+             RowBox[{"Length", "[", "PopA", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PeopleMetA", " ", "=", " ", 
+             RowBox[{"Random", "[", 
+              RowBox[{"Integer", ",", 
+               RowBox[{"{", 
+                RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"TotalPeopleB", " ", "=", " ", 
+             RowBox[{"Length", "[", "PopB", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PeopleMetB", " ", "=", " ", 
+             RowBox[{"Random", "[", 
+              RowBox[{"Integer", ",", 
+               RowBox[{"{", 
+                RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"For", "[", 
+              RowBox[{
+               RowBox[{"j", "=", "1"}], ",", 
+               RowBox[{"j", "<", 
+                RowBox[{"TotalPeopleA", "+", "1"}]}], ",", " ", 
+               RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"i", "=", "0"}], ",", 
+                 RowBox[{"i", "<", "PeopleMetA"}], ",", 
+                 RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"ContactA", " ", "=", 
+                   RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "TotalPeopleA"}], "}"}]}], "]"}]}], ";",
+                   "\[IndentingNewLine]", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "100"}], "}"}]}], "]"}], "<", " ", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Real", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "]"}], "<", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopA", "\[LeftDoubleBracket]", "ContactA", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}]}], 
+                   "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+                "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+             RowBox[{"For", "[", 
+              RowBox[{
+               RowBox[{"j", "=", "1"}], ",", 
+               RowBox[{"j", "<", 
+                RowBox[{"TotalPeopleB", "+", "1"}]}], ",", " ", 
+               RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"i", "=", "0"}], ",", 
+                 RowBox[{"i", "<", "PeopleMetB"}], ",", 
+                 RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"ContactB", " ", "=", 
+                   RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "TotalPeopleB"}], "}"}]}], "]"}]}], ";",
+                   "\[IndentingNewLine]", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], ",",
+                     "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Integer", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "100"}], "}"}]}], "]"}], "<", " ", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<n\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[NotEqual]", "\"\<r\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "j", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "\[Equal]", "\"\<i\>\""}], "&&", 
+                    RowBox[{
+                    RowBox[{"Random", "[", 
+                    RowBox[{"Real", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "]"}], "<", " ", 
+                    "Infectious"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "PopB", "\[LeftDoubleBracket]", "ContactB", 
+                    "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "4", 
+                    "\[RightDoubleBracket]"}], "=", "\"\<n\>\""}]}], "]"}]}], 
+                   "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+                "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Clear", "[", 
+             RowBox[{"ToA", ",", "ToB"}], "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"ToA", "=", 
+             RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"ToB", "=", 
+             RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "0"}], ",", 
+              RowBox[{
+               RowBox[{"Length", "[", "ToA", "]"}], "<", "Transfer"}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"j", "=", 
+                RowBox[{"RandomChoice", "[", "PopB", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"ToA", "=", 
+                RowBox[{"Append", "[", 
+                 RowBox[{"ToA", ",", "j"}], "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"PopB", "=", 
+                RowBox[{"Complement", "[", 
+                 RowBox[{"PopB", ",", "ToA"}], "]"}]}]}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"i", "=", "0"}], ",", 
+              RowBox[{
+               RowBox[{"Length", "[", "ToB", "]"}], "<", "Transfer"}], ",", 
+              RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"j", "=", 
+                RowBox[{"RandomChoice", "[", "PopA", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"ToB", "=", 
+                RowBox[{"Append", "[", 
+                 RowBox[{"ToB", ",", "j"}], "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"PopA", "=", 
+                RowBox[{"Complement", "[", 
+                 RowBox[{"PopA", ",", "ToB"}], "]"}]}]}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"PopA", "=", 
+             RowBox[{"Join", "[", 
+              RowBox[{"PopA", ",", "ToA"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PopB", "=", 
+             RowBox[{"Join", "[", 
+              RowBox[{"PopB", ",", "ToB"}], "]"}]}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"moving", "=", "False"}], ";"}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+      "Pops", "\[LeftDoubleBracket]", "w", "\[RightDoubleBracket]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"UpdateInterval", "\[Rule]", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{"moving", ",", "2", ",", "Infinity"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{"running", ",", "\"\<reset\>\"", ",", "\"\<run\>\""}], 
+            "]"}], "<>", "\"\< simulation\>\""}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"!", "running"}], ",", 
+              RowBox[{"moving", "=", "True"}]}], "]"}], ",", 
+            RowBox[{"running", "=", 
+             RowBox[{"!", "running"}]}]}], "}"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", " ", "225"}], ",", " ", 
+          RowBox[{"Alignment", "\[Rule]", " ", "Center"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"If", "[", 
+         RowBox[{"running", ",", "\[IndentingNewLine]", 
+          RowBox[{"Column", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Column", "[", 
+               RowBox[{
+                RowBox[{"{", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "10"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", "\"\<day (morning)\>\"", ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Control", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"w", ",", "1", ",", "\"\<\>\""}], "}"}], ",", "1",
+                     ",", "Days", ",", "1", ",", 
+                    RowBox[{
+                    "Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], 
+                    "}"}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+                "Left"}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Column", "[", 
+               RowBox[{
+                RowBox[{"{", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "10"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<duration of simulation = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Days", "]"}]}], "}"}], "]"}], 
+                  ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<city population = \>\"", ",", 
+                    RowBox[{"ToString", "[", "TotalPop", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<initial infected cases, City A = \>\"", ",", 
+                    RowBox[{"ToString", "[", "InfectedA", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<initial infected cases, City B = \>\"", ",", 
+                    RowBox[{"ToString", "[", "InfectedB", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<travellers/day = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Transfer", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<chance of infection on contact = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Infectious", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    "\"\<latency before contagious state [days] = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Incubation", "]"}]}], "}"}], 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Spacer", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "15"}], "}"}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    "\"\<duration of contagious state [days] = \>\"", ",", 
+                    RowBox[{"ToString", "[", "Recovery", "]"}]}], "}"}], 
+                   "]"}]}], "\[IndentingNewLine]", "}"}], ",", "Right"}], 
+               "]"}]}], "\[IndentingNewLine]", "}"}], ",", "Center"}], "]"}], 
+          "\[IndentingNewLine]", ",", "\"\<\>\""}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", "running"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Column", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+             "\"\<duration of simulation [days]\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Days", ",", "7", ",", "\"\<\>\""}], "}"}], ",", 
+                 "1", ",", "21", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<city population\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"TotalPop", ",", "10", ",", "\"\<\>\""}], "}"}], 
+                 ",", "1", ",", "100", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<initial infected cases, City A\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"InfectedA", ",", "1", ",", "\"\<\>\""}], "}"}], 
+                 ",", "0", ",", "TotalPop", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<initial infected cases, City B\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"InfectedB", ",", "1", ",", "\"\<\>\""}], "}"}], 
+                 ",", "0", ",", "TotalPop", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<travellers/day\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Transfer", ",", "0", ",", "\"\<\>\""}], "}"}], ",",
+                  "0", ",", "TotalPop", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<chance of infection on contact\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Infectious", ",", ".1", ",", "\"\<\>\""}], "}"}], 
+                 ",", "0", ",", "1", ",", ".01", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<latency before contagious state [days]\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Incubation", ",", "3", ",", "\"\<\>\""}], "}"}], 
+                 ",", "1", ",", "7", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}], ",", "\[IndentingNewLine]", 
+              "\"\<duration of contagious state [days]\>\"", ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Control", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Recovery", ",", "3", ",", "\"\<\>\""}], "}"}], ",",
+                  "1", ",", "7", ",", "1", ",", "Slider", ",", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], 
+                "}"}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", "Left", 
+            ",", ".45"}], "]"}], "\[IndentingNewLine]", ",", "\"\<\>\""}], 
+         "]"}]}]}], "\[IndentingNewLine]", "}"}], ",", "Center"}], "]"}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"moving", ",", "False", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"running", ",", "False", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Pops", ",", 
+     RowBox[{"Pane", "[", 
+      RowBox[{"\"\<adjust options and run simulation\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"200", ",", "400"}], "}"}]}], "]"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"InfectedA", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"InfectedB", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Days", ",", "7", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Recovery", ",", "3", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Incubation", ",", "3", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Infectious", ",", "10", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"Transfer", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"w", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"TotalPop", ",", "10", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"j", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}], ",", 
+   RowBox[{"ContentSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"340", ",", "400"}], "}"}]}], ",", 
+   RowBox[{"FrameMargins", "\[Rule]", " ", "0"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.551008604494242*^9, 3.5510086064092445`*^9}, {
+   3.551008794402975*^9, 3.551008799712982*^9}, {3.551008842277155*^9, 
+   3.5510088789442663`*^9}, {3.5510090135906296`*^9, 
+   3.5510090307956533`*^9}, {3.551009258056733*^9, 3.5510093332522497`*^9}, {
+   3.5510093803543744`*^9, 3.55100938666644*^9}, {3.551009419717662*^9, 
+   3.551009463681841*^9}, {3.5510095047869563`*^9, 3.5510095202760363`*^9}, {
+   3.551009583357298*^9, 3.551010004591241*^9}, {3.5510100366783447`*^9, 
+   3.551010224314186*^9}, {3.551010324984621*^9, 3.5510103363637543`*^9}, 
+   3.55101038536345*^9, {3.5510105273281994`*^9, 3.5510105379082146`*^9}, {
+   3.551010576412386*^9, 3.551010586312399*^9}, {3.5510106216295676`*^9, 
+   3.5510106382387056`*^9}, {3.551010690282896*^9, 3.5510107836684337`*^9}, {
+   3.5510117292902546`*^9, 3.5510117351352625`*^9}, {3.5510118090124216`*^9, 
+   3.551011821352439*^9}, {3.5510119013175507`*^9, 3.551011990384734*^9}, {
+   3.551012051376876*^9, 3.551012100906945*^9}, {3.551012270153351*^9, 
+   3.551012426475626*^9}, {3.5510126527961245`*^9, 3.551012696726186*^9}, {
+   3.551012736846242*^9, 3.5510127483962584`*^9}, {3.5510162672332983`*^9, 
+   3.551016307544504*^9}, {3.5510200174469986`*^9, 3.5510201396509886`*^9}, {
+   3.551020170123731*^9, 3.5510201821774206`*^9}, {3.551020518164638*^9, 
+   3.5510205186226645`*^9}, {3.551020623389657*^9, 3.551020654650445*^9}, {
+   3.5510207170280123`*^9, 3.5510207305957885`*^9}, {3.5510207765234156`*^9, 
+   3.5510208401250534`*^9}, {3.5510208866897163`*^9, 3.551020909616028*^9}, {
+   3.551020985030341*^9, 3.5510209884875393`*^9}, {3.551021023891564*^9, 
+   3.5510211479596605`*^9}, {3.551021195836399*^9, 3.551021250350517*^9}, {
+   3.55102131247707*^9, 3.551021348928155*^9}, {3.5510213937927213`*^9, 
+   3.5510214399873633`*^9}, {3.5510214701090865`*^9, 3.551021528163407*^9}, {
+   3.551021615044376*^9, 3.5510216977331057`*^9}, {3.551022311745225*^9, 
+   3.5510223467692285`*^9}, {3.55102238614548*^9, 3.5510224112889185`*^9}, {
+   3.5510224508241796`*^9, 3.5510224509521875`*^9}, {3.5510224828900137`*^9, 
+   3.551022580455594*^9}, {3.551022736550523*^9, 3.551022743381913*^9}, {
+   3.551022798643074*^9, 3.551022810352744*^9}, {3.5510228865191*^9, 
+   3.5510229120655613`*^9}, {3.551023104425564*^9, 3.5510231229546237`*^9}, {
+   3.551023168591234*^9, 3.551023179081834*^9}, {3.5510232504799175`*^9, 
+   3.5510234793910103`*^9}, {3.5510235129809318`*^9, 
+   3.5510235300259066`*^9}, {3.551023631981738*^9, 3.551023638558114*^9}, {
+   3.5510237260631194`*^9, 3.5510237314084253`*^9}, {3.5510239754833856`*^9, 
+   3.5510239794756136`*^9}, {3.551024101476592*^9, 3.551024131901332*^9}, {
+   3.551024225311675*^9, 3.5510242532162704`*^9}, {3.5510243327748213`*^9, 
+   3.5510243479536896`*^9}, {3.551024382825684*^9, 3.551024414671506*^9}, {
+   3.5510245433418655`*^9, 3.5510245563206077`*^9}, {3.551024619064196*^9, 
+   3.5510246666159163`*^9}, {3.551024833392455*^9, 3.5510248614980626`*^9}, {
+   3.5510248978211403`*^9, 3.551024899300225*^9}, {3.5510250455315886`*^9, 
+   3.5510250839007835`*^9}, {3.551025137911873*^9, 3.5510251834884796`*^9}, {
+   3.5510253066625247`*^9, 3.5510253568293943`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Days$$ = 7, $CellContext`i$$ = 
+    0, $CellContext`Incubation$$ = 3, $CellContext`InfectedA$$ = 
+    1, $CellContext`InfectedB$$ = 1, $CellContext`Infectious$$ = 
+    0.1, $CellContext`j$$ = 0, $CellContext`moving$$ = 
+    False, $CellContext`Pops$$ = Pane[
+    "adjust options and run simulation", {200, 
+     400}], $CellContext`Recovery$$ = 3, $CellContext`running$$ = 
+    False, $CellContext`TotalPop$$ = 10, $CellContext`Transfer$$ = 
+    0, $CellContext`w$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`w$$], 1, ""}, 1, 
+      Dynamic[$CellContext`Days$$], 1}, {{
+       Hold[$CellContext`Days$$], 7, ""}, 1, 21, 1}, {{
+       Hold[$CellContext`TotalPop$$], 10, ""}, 1, 100, 1}, {{
+       Hold[$CellContext`InfectedA$$], 1, ""}, 0, 
+      Dynamic[$CellContext`TotalPop$$], 1}, {{
+       Hold[$CellContext`InfectedB$$], 1, ""}, 0, 
+      Dynamic[$CellContext`TotalPop$$], 1}, {{
+       Hold[$CellContext`Transfer$$], 0, ""}, 0, 
+      Dynamic[$CellContext`TotalPop$$], 1}, {{
+       Hold[$CellContext`Infectious$$], 0.1, ""}, 0, 1, 0.01}, {{
+       Hold[$CellContext`Incubation$$], 3, ""}, 1, 7, 1}, {{
+       Hold[$CellContext`Recovery$$], 3, ""}, 1, 7, 1}, {
+      Hold[
+       Column[{
+         Dynamic[
+          Button[
+           StringJoin[
+            If[$CellContext`running$$, "reset", "run"], " simulation"], {
+            If[
+             Not[$CellContext`running$$], $CellContext`moving$$ = 
+             True], $CellContext`running$$ = Not[$CellContext`running$$]}, 
+           ImageSize -> 225, Alignment -> Center]], 
+         Dynamic[
+          If[$CellContext`running$$, 
+           Column[{
+             Column[{
+               Spacer[{0, 10}], "day (morning)", 
+               Manipulate`Place[1]}, Left], 
+             Column[{
+               Spacer[{0, 10}], 
+               Row[{"duration of simulation = ", 
+                 ToString[$CellContext`Days$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"city population = ", 
+                 ToString[$CellContext`TotalPop$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"initial infected cases, City A = ", 
+                 ToString[$CellContext`InfectedA$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"initial infected cases, City B = ", 
+                 ToString[$CellContext`InfectedB$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"travellers/day = ", 
+                 ToString[$CellContext`Transfer$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"chance of infection on contact = ", 
+                 ToString[$CellContext`Infectious$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"latency before contagious state [days] = ", 
+                 ToString[$CellContext`Incubation$$]}], 
+               Spacer[{0, 15}], 
+               Row[{"duration of contagious state [days] = ", 
+                 ToString[$CellContext`Recovery$$]}]}, Right]}, Center], ""]], 
+         Dynamic[
+          If[
+           Not[$CellContext`running$$], 
+           Column[{"duration of simulation [days]", 
+             Manipulate`Place[2], "city population", 
+             Manipulate`Place[3], "initial infected cases, City A", 
+             Manipulate`Place[4], "initial infected cases, City B", 
+             Manipulate`Place[5], "travellers/day", 
+             Manipulate`Place[6], "chance of infection on contact", 
+             Manipulate`Place[7], "latency before contagious state [days]", 
+             Manipulate`Place[8], "duration of contagious state [days]", 
+             Manipulate`Place[9]}, Left, 0.45], ""]]}, Center]], 
+      Manipulate`Dump`ThisIsNotAControl}, {
+      Hold[$CellContext`moving$$], False}, {
+      Hold[$CellContext`running$$], False}, {
+      Hold[$CellContext`Pops$$], 
+      Pane["adjust options and run simulation", {200, 400}]}, {
+      Hold[$CellContext`InfectedA$$], 1}, {
+      Hold[$CellContext`InfectedB$$], 1}, {
+      Hold[$CellContext`Days$$], 7}, {
+      Hold[$CellContext`Recovery$$], 3}, {
+      Hold[$CellContext`Incubation$$], 3}, {
+      Hold[$CellContext`Infectious$$], 10}, {
+      Hold[$CellContext`Transfer$$], 0}, {
+      Hold[$CellContext`w$$], 1}, {
+      Hold[$CellContext`TotalPop$$], 10}, {
+      Hold[$CellContext`i$$], 0}, {
+      Hold[$CellContext`j$$], 0}}, Typeset`size$$ = {264., {2., 8.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`w$63533$$ = 0, $CellContext`Days$63534$$ = 
+    0, $CellContext`TotalPop$63535$$ = 0, $CellContext`InfectedA$63536$$ = 
+    0, $CellContext`InfectedB$63537$$ = 0, $CellContext`Transfer$63538$$ = 
+    0, $CellContext`Infectious$63539$$ = 0, $CellContext`Incubation$63540$$ = 
+    0, $CellContext`Recovery$63541$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`Days$$ = 7, $CellContext`i$$ = 
+        0, $CellContext`Incubation$$ = 3, $CellContext`InfectedA$$ = 
+        1, $CellContext`InfectedB$$ = 1, $CellContext`Infectious$$ = 
+        0.1, $CellContext`j$$ = 0, $CellContext`moving$$ = 
+        False, $CellContext`Pops$$ = 
+        Pane["adjust options and run simulation", {200, 
+          400}], $CellContext`Recovery$$ = 3, $CellContext`running$$ = 
+        False, $CellContext`TotalPop$$ = 10, $CellContext`Transfer$$ = 
+        0, $CellContext`w$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`w$$, $CellContext`w$63533$$, 0], 
+        Hold[$CellContext`Days$$, $CellContext`Days$63534$$, 0], 
+        Hold[$CellContext`TotalPop$$, $CellContext`TotalPop$63535$$, 0], 
+        Hold[$CellContext`InfectedA$$, $CellContext`InfectedA$63536$$, 0], 
+        Hold[$CellContext`InfectedB$$, $CellContext`InfectedB$63537$$, 0], 
+        Hold[$CellContext`Transfer$$, $CellContext`Transfer$63538$$, 0], 
+        Hold[$CellContext`Infectious$$, $CellContext`Infectious$63539$$, 0], 
+        Hold[$CellContext`Incubation$$, $CellContext`Incubation$63540$$, 0], 
+        Hold[$CellContext`Recovery$$, $CellContext`Recovery$63541$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Refresh[If[$CellContext`moving$$, $CellContext`w$$ = 1; 
+          Clear[$CellContext`Pops$$]; $CellContext`Pops$$ = {}; \
+$CellContext`PopA = Table[{$CellContext`k $CellContext`A, 
+              RandomReal[{0, 1.8}], 
+              RandomReal[{0, 2 Pi}], "u", 0}, {$CellContext`k, 
+              1, $CellContext`TotalPop$$}]; $CellContext`PopB = 
+           Table[{$CellContext`k $CellContext`B, 
+              RandomReal[{0, 1.8}], 
+              RandomReal[{0, 2 Pi}], "u", 0}, {$CellContext`k, 
+              1, $CellContext`TotalPop$$}]; 
+          For[$CellContext`j$$ = 
+            1, $CellContext`j$$ < $CellContext`InfectedA$$ + 1, 
+            Increment[$CellContext`j$$], Part[
+              Part[$CellContext`PopA, $CellContext`j$$], 4] = "i"]; 
+          For[$CellContext`j$$ = 
+            1, $CellContext`j$$ < $CellContext`InfectedB$$ + 1, 
+            Increment[$CellContext`j$$], Part[
+              Part[$CellContext`PopB, $CellContext`j$$], 4] = "i"]; 
+          For[$CellContext`k = 1, $CellContext`k < $CellContext`Days$$ + 1, 
+            
+            Increment[$CellContext`k], $CellContext`Pops$$ = 
+             Append[$CellContext`Pops$$, 
+               Grid[{{"", 
+                  Image[
+                   Graphics[
+                    Join[{{
+                    Circle[{0, 0}, 2]}}, 
+                    Table[{
+                    If[
+                    Or[Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 4] == "u", Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 4] == "r"], 
+                    Darker[Green, 0.5], 
+                    If[Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 4] == "i", Red,
+                     Blue]], 
+                    Disk[{Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 2] Cos[
+                    Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 3]], Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 2] Sin[
+                    Part[
+                    Part[$CellContext`PopA, $CellContext`i$$], 3]]}, 
+                    0.1]}, {$CellContext`i$$, 1, 
+                    Length[$CellContext`PopA]}]]]], 
+                  Column[{
+                    Style["City A", "Title", 16], 
+                    Style[
+                    StringJoin["Latent =      ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopA, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "n", 
+                    Blank[]}]]]], Blue, Bold], 
+                    Style[
+                    StringJoin["Contagious =  ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopA, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "i", 
+                    Blank[]}]]]], Red, Bold], 
+                    Style[
+                    StringJoin["Susceptible = ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopA, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "u", 
+                    Blank[]}]]]], 
+                    Darker[Green, 0.5], Bold], 
+                    Style[
+                    StringJoin["Recovered =   ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopA, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "r", 
+                    Blank[]}]]]], 
+                    Darker[Green, 0.5], Bold]}]}, {"", 
+                  Image[
+                   Graphics[
+                    Join[{{
+                    Circle[{0, 0}, 2]}}, 
+                    Table[{
+                    If[
+                    Or[Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 4] == "u", Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 4] == "r"], 
+                    Darker[Green, 0.5], 
+                    If[Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 4] == "i", Red,
+                     Blue]], 
+                    Disk[{Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 2] Cos[
+                    Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 3]], Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 2] Sin[
+                    Part[
+                    Part[$CellContext`PopB, $CellContext`i$$], 3]]}, 
+                    0.1]}, {$CellContext`i$$, 1, 
+                    Length[$CellContext`PopB]}]]]], 
+                  Column[{
+                    Style["City B", "Title", 16], 
+                    Style[
+                    StringJoin["Latent =      ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopB, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "n", 
+                    Blank[]}]]]], Blue, Bold], 
+                    Style[
+                    StringJoin["Contagious =  ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopB, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "i", 
+                    Blank[]}]]]], Red, Bold], 
+                    Style[
+                    StringJoin["Susceptible = ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopB, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "u", 
+                    Blank[]}]]]], 
+                    Darker[Green, 0.5], Bold], 
+                    Style[
+                    StringJoin["Recovered =   ", 
+                    ToString[
+                    Length[
+                    Cases[$CellContext`PopB, {
+                    Blank[], 
+                    Blank[], 
+                    Blank[], "r", 
+                    Blank[]}]]]], 
+                    Darker[Green, 0.5], Bold]}]}}, 
+                Spacings -> {{10, 2}, 1.8}]]; 
+            For[$CellContext`i$$ = 1, $CellContext`i$$ < 
+              Length[$CellContext`PopA] + 1, 
+              Increment[$CellContext`i$$], Which[
+                And[Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 
+                   5] == $CellContext`Recovery$$, Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 4] == "i"], Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 5] = 0; Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 4] = "r", 
+                And[Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 
+                   5] == $CellContext`Incubation$$ - 1, Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 4] == "n"], Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 5] = 0; Part[
+                   Part[$CellContext`PopA, $CellContext`i$$], 4] = "i"]; 
+              Null]; For[$CellContext`i$$ = 1, $CellContext`i$$ < 
+              Length[$CellContext`PopB] + 1, 
+              Increment[$CellContext`i$$], Which[
+                And[Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 
+                   5] == $CellContext`Recovery$$, Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 4] == "i"], Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 5] = 0; Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 4] = "r", 
+                And[Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 
+                   5] == $CellContext`Incubation$$ - 1, Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 4] == "n"], Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 5] = 0; Part[
+                   Part[$CellContext`PopB, $CellContext`i$$], 4] = "i"]; 
+              Null]; For[$CellContext`i$$ = 1, $CellContext`i$$ < 
+              Length[$CellContext`PopA] + 1, 
+              Increment[$CellContext`i$$], 
+              If[
+               Or[Part[
+                  Part[$CellContext`PopA, $CellContext`i$$], 4] == "i", Part[
+                  Part[$CellContext`PopA, $CellContext`i$$], 4] == "n"], Part[
+                 Part[$CellContext`PopA, $CellContext`i$$], 5] = Part[
+                  Part[$CellContext`PopA, $CellContext`i$$], 5] + 1]]; 
+            For[$CellContext`i$$ = 1, $CellContext`i$$ < 
+              Length[$CellContext`PopB] + 1, 
+              Increment[$CellContext`i$$], 
+              If[
+               Or[Part[
+                  Part[$CellContext`PopB, $CellContext`i$$], 4] == "i", Part[
+                  Part[$CellContext`PopB, $CellContext`i$$], 4] == "n"], Part[
+                 Part[$CellContext`PopB, $CellContext`i$$], 5] = Part[
+                  Part[$CellContext`PopB, $CellContext`i$$], 5] + 
+                1]]; $CellContext`TotalPeopleA = 
+             Length[$CellContext`PopA]; $CellContext`PeopleMetA = 
+             Random[Integer, {10, 20}]; $CellContext`TotalPeopleB = 
+             Length[$CellContext`PopB]; $CellContext`PeopleMetB = 
+             Random[Integer, {10, 20}]; 
+            For[$CellContext`j$$ = 
+               1, $CellContext`j$$ < $CellContext`TotalPeopleA + 1, 
+               Increment[$CellContext`j$$], 
+               
+               For[$CellContext`i$$ = 
+                0, $CellContext`i$$ < $CellContext`PeopleMetA, 
+                
+                Increment[$CellContext`i$$], $CellContext`ContactA = 
+                 Random[Integer, {1, $CellContext`TotalPeopleA}]; If[Part[
+                    Part[$CellContext`PopA, $CellContext`ContactA], 4] == "i", 
+                  If[
+                   And[Part[
+                    Part[$CellContext`PopA, $CellContext`j$$], 4] != "i", Part[
+                    Part[$CellContext`PopA, $CellContext`j$$], 4] != "n", Part[
+                    Part[$CellContext`PopA, $CellContext`j$$], 4] != "r", 
+                    Random[Integer, {1, 100}] < $CellContext`Infectious$$], 
+                   Part[
+                    Part[$CellContext`PopA, $CellContext`j$$], 4] = "n"], 
+                  If[
+                   And[Part[
+                    Part[$CellContext`PopA, $CellContext`ContactA], 4] != "n",
+                     Part[
+                    Part[$CellContext`PopA, $CellContext`ContactA], 4] != "r",
+                     Part[
+                    Part[$CellContext`PopA, $CellContext`j$$], 4] == "i", 
+                    Random[Real, {0, 1}] < $CellContext`Infectious$$], Part[
+                    Part[$CellContext`PopA, $CellContext`ContactA], 4] = 
+                   "n"]]]] 
+             For[$CellContext`j$$ = 
+               1, $CellContext`j$$ < $CellContext`TotalPeopleB + 1, 
+               Increment[$CellContext`j$$], 
+               
+               For[$CellContext`i$$ = 
+                0, $CellContext`i$$ < $CellContext`PeopleMetB, 
+                Increment[$CellContext`i$$], $CellContext`ContactB = 
+                 Random[Integer, {1, $CellContext`TotalPeopleB}]; If[Part[
+                    Part[$CellContext`PopB, $CellContext`ContactB], 4] == "i", 
+                  If[
+                   And[Part[
+                    Part[$CellContext`PopB, $CellContext`j$$], 4] != "i", Part[
+                    Part[$CellContext`PopB, $CellContext`j$$], 4] != "n", Part[
+                    Part[$CellContext`PopB, $CellContext`j$$], 4] != "r", 
+                    Random[Integer, {1, 100}] < $CellContext`Infectious$$], 
+                   Part[
+                    Part[$CellContext`PopB, $CellContext`j$$], 4] = "n"], 
+                  If[
+                   And[Part[
+                    Part[$CellContext`PopB, $CellContext`ContactB], 4] != "n",
+                     Part[
+                    Part[$CellContext`PopB, $CellContext`ContactB], 4] != "r",
+                     Part[
+                    Part[$CellContext`PopB, $CellContext`j$$], 4] == "i", 
+                    Random[Real, {0, 1}] < $CellContext`Infectious$$], Part[
+                    Part[$CellContext`PopB, $CellContext`ContactB], 4] = 
+                   "n"]]]]; 
+            Clear[$CellContext`ToA, $CellContext`ToB]; $CellContext`ToA = {}; \
+$CellContext`ToB = {}; 
+            For[$CellContext`i$$ = 0, 
+              Length[$CellContext`ToA] < $CellContext`Transfer$$, 
+              
+              Increment[$CellContext`i$$], $CellContext`j$$ = 
+               RandomChoice[$CellContext`PopB]; $CellContext`ToA = 
+               Append[$CellContext`ToA, $CellContext`j$$]; $CellContext`PopB = 
+               Complement[$CellContext`PopB, $CellContext`ToA]]; 
+            For[$CellContext`i$$ = 0, 
+              Length[$CellContext`ToB] < $CellContext`Transfer$$, 
+              
+              Increment[$CellContext`i$$], $CellContext`j$$ = 
+               RandomChoice[$CellContext`PopA]; $CellContext`ToB = 
+               Append[$CellContext`ToB, $CellContext`j$$]; $CellContext`PopA = 
+               Complement[$CellContext`PopA, $CellContext`ToB]]; \
+$CellContext`PopA = 
+             Join[$CellContext`PopA, $CellContext`ToA]; $CellContext`PopB = 
+             Join[$CellContext`PopB, $CellContext`ToB]; 
+            Null]; $CellContext`moving$$ = False; Null]; 
+        Part[$CellContext`Pops$$, $CellContext`w$$], UpdateInterval -> 
+        If[$CellContext`moving$$, 2, Infinity]], 
+      "Specifications" :> {{{$CellContext`w$$, 1, ""}, 1, 
+         Dynamic[$CellContext`Days$$], 1, Appearance -> "Labeled", 
+         ControlPlacement -> 1}, {{$CellContext`Days$$, 7, ""}, 1, 21, 1, 
+         ControlType -> Slider, Appearance -> "Labeled", ControlPlacement -> 
+         2}, {{$CellContext`TotalPop$$, 10, ""}, 1, 100, 1, ControlType -> 
+         Slider, Appearance -> "Labeled", ControlPlacement -> 
+         3}, {{$CellContext`InfectedA$$, 1, ""}, 0, 
+         Dynamic[$CellContext`TotalPop$$], 1, ControlType -> Slider, 
+         Appearance -> "Labeled", ControlPlacement -> 
+         4}, {{$CellContext`InfectedB$$, 1, ""}, 0, 
+         Dynamic[$CellContext`TotalPop$$], 1, ControlType -> Slider, 
+         Appearance -> "Labeled", ControlPlacement -> 
+         5}, {{$CellContext`Transfer$$, 0, ""}, 0, 
+         Dynamic[$CellContext`TotalPop$$], 1, ControlType -> Slider, 
+         Appearance -> "Labeled", ControlPlacement -> 
+         6}, {{$CellContext`Infectious$$, 0.1, ""}, 0, 1, 0.01, ControlType -> 
+         Slider, Appearance -> "Labeled", ControlPlacement -> 
+         7}, {{$CellContext`Incubation$$, 3, ""}, 1, 7, 1, ControlType -> 
+         Slider, Appearance -> "Labeled", ControlPlacement -> 
+         8}, {{$CellContext`Recovery$$, 3, ""}, 1, 7, 1, ControlType -> 
+         Slider, Appearance -> "Labeled", ControlPlacement -> 9}, 
+        Column[{
+          Dynamic[
+           Button[
+            StringJoin[
+             If[$CellContext`running$$, "reset", "run"], " simulation"], {
+             If[
+              Not[$CellContext`running$$], $CellContext`moving$$ = 
+              True], $CellContext`running$$ = Not[$CellContext`running$$]}, 
+            ImageSize -> 225, Alignment -> Center]], 
+          Dynamic[
+           If[$CellContext`running$$, 
+            Column[{
+              Column[{
+                Spacer[{0, 10}], "day (morning)", 
+                Manipulate`Place[1]}, Left], 
+              Column[{
+                Spacer[{0, 10}], 
+                Row[{"duration of simulation = ", 
+                  ToString[$CellContext`Days$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"city population = ", 
+                  ToString[$CellContext`TotalPop$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"initial infected cases, City A = ", 
+                  ToString[$CellContext`InfectedA$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"initial infected cases, City B = ", 
+                  ToString[$CellContext`InfectedB$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"travellers/day = ", 
+                  ToString[$CellContext`Transfer$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"chance of infection on contact = ", 
+                  ToString[$CellContext`Infectious$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"latency before contagious state [days] = ", 
+                  ToString[$CellContext`Incubation$$]}], 
+                Spacer[{0, 15}], 
+                Row[{"duration of contagious state [days] = ", 
+                  ToString[$CellContext`Recovery$$]}]}, Right]}, Center], 
+            ""]], 
+          Dynamic[
+           If[
+            Not[$CellContext`running$$], 
+            Column[{"duration of simulation [days]", 
+              Manipulate`Place[2], "city population", 
+              Manipulate`Place[3], "initial infected cases, City A", 
+              Manipulate`Place[4], "initial infected cases, City B", 
+              Manipulate`Place[5], "travellers/day", 
+              Manipulate`Place[6], "chance of infection on contact", 
+              Manipulate`Place[7], "latency before contagious state [days]", 
+              Manipulate`Place[8], "duration of contagious state [days]", 
+              Manipulate`Place[9]}, Left, 0.45], ""]]}, 
+         Center], {$CellContext`moving$$, False, ControlType -> 
+         None}, {$CellContext`running$$, False, ControlType -> 
+         None}, {$CellContext`Pops$$, 
+         Pane["adjust options and run simulation", {200, 400}], ControlType -> 
+         None}, {$CellContext`InfectedA$$, 1, ControlType -> 
+         None}, {$CellContext`InfectedB$$, 1, ControlType -> 
+         None}, {$CellContext`Days$$, 7, ControlType -> 
+         None}, {$CellContext`Recovery$$, 3, ControlType -> 
+         None}, {$CellContext`Incubation$$, 3, ControlType -> 
+         None}, {$CellContext`Infectious$$, 10, ControlType -> 
+         None}, {$CellContext`Transfer$$, 0, ControlType -> 
+         None}, {$CellContext`w$$, 1, ControlType -> 
+         None}, {$CellContext`TotalPop$$, 10, ControlType -> 
+         None}, {$CellContext`i$$, 0, ControlType -> None}, {$CellContext`j$$,
+          0, ControlType -> None}}, 
+      "Options" :> {
+       ControlPlacement -> Left, ContentSize -> {340, 400}, FrameMargins -> 
+        0}, "DefaultOptions" :> {}],
+     ImageSizeCache->{696., {237., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.5510212221669044`*^9, 3.5510212511005597`*^9}, {
+   3.5510213211615667`*^9, 3.551021349465186*^9}, {3.5510213971489134`*^9, 
+   3.5510214405503955`*^9}, 3.5510215294134784`*^9, {3.551021620048662*^9, 
+   3.5510216618560534`*^9}, 3.5510216991451864`*^9, 3.5510223559497533`*^9, {
+   3.5510223887506294`*^9, 3.5510224120569625`*^9}, 3.5510224516452265`*^9, {
+   3.5510224839310737`*^9, 3.551022581191636*^9}, 3.55102274402495*^9, {
+   3.5510228010772133`*^9, 3.5510228111797915`*^9}, 3.551022914241686*^9, 
+   3.5510231070487137`*^9, 3.551023179938883*^9, 3.5510232529090567`*^9, {
+   3.5510232837468204`*^9, 3.5510233022698803`*^9}, 3.551023340007038*^9, {
+   3.5510234022035956`*^9, 3.5510234148513193`*^9}, {3.5510234456800823`*^9, 
+   3.5510234806900845`*^9}, 3.5510235309469595`*^9, {3.5510236330888014`*^9, 
+   3.551023638934136*^9}, {3.551023732244473*^9, 3.5510237440541487`*^9}, 
+   3.5510239801726537`*^9, {3.5510241042687516`*^9, 3.5510241339944515`*^9}, {
+   3.551024228982885*^9, 3.551024254912368*^9}, {3.551024341366313*^9, 
+   3.551024348650729*^9}, 3.551024421182878*^9, 3.5510245573136644`*^9, {
+   3.551024651108029*^9, 3.551024667175948*^9}, {3.5510248476272693`*^9, 
+   3.5510248624291162`*^9}, 3.5510250631575966`*^9, {3.5510251387349195`*^9, 
+   3.5510251841025143`*^9}, {3.5510253084776287`*^9, 3.5510253576624413`*^9}}]
+}, Open  ]],
+
+Cell[BoxData["hg"], "Input",
+ CellChangeTimes->{{3.5510244867106256`*^9, 3.551024486728627*^9}}],
+
+Cell[BoxData["."], "Input",
+ CellChangeTimes->{3.551010299249585*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Column"}]], "Input",
+ CellChangeTimes->{{3.5510238633619723`*^9, 3.551023866779168*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Column\\\", \\\"[\\\", \
+RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"expr\\\
+\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\"]\\\"}]\\) is an object that \
+formats with the \\!\\(\\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) arranged in a column, with \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]]\\) above \\!\\(\\*SubscriptBox[StyleBox[\\\"expr\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]]\\), etc. \\n\\!\\(\\*RowBox[{\\\
+\"Column\\\", \\\"[\\\", RowBox[{StyleBox[\\\"list\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"alignment\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) aligns \
+each element horizontally in the specified way. \
+\\n\\!\\(\\*RowBox[{\\\"Column\\\", \\\"[\\\", RowBox[{StyleBox[\\\"list\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"alignment\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"spacing\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) leaves the specified \
+number of \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\)-heights of spacing \
+between successive elements.\"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Column"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5510238672861967`*^9},
+ CellTags->"Info3551009467-5291587"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Spacer"}]], "Input",
+ CellChangeTimes->{{3.5510090015785537`*^9, 3.551009002703555*^9}, {
+  3.5510200501388683`*^9, 3.5510200514479437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"Spacer\\\", \\\"[\\\", StyleBox[\\\"w\\\", \
+\\\"TI\\\"], \\\"]\\\"}]\) displays as a spacer \!\(\*StyleBox[\\\"w\\\", \
+\\\"TI\\\"]\) printer's points wide.\\n\!\(\*RowBox[{\\\"Spacer\\\", \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"w\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"h\\\", \\\"TI\\\"]}], \\\"}\\\"}], \\\"]\\\"}]\) \
+displays as a spacer \!\(\*StyleBox[\\\"w\\\", \\\"TI\\\"]\) points wide and \
+a total of \!\(\*StyleBox[\\\"h\\\", \\\"TI\\\"]\) points \
+high.\\n\!\(\*RowBox[{\\\"Spacer\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"w\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"h\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"dh\\\", \\\"TI\\\"]}], \\\"}\\\"}], \
+\\\"]\\\"}]\) makes the spacer extend \!\(\*StyleBox[\\\"dh\\\", \
+\\\"TI\\\"]\) points below the baseline. \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Spacer"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5510200522789907`*^9},
+ CellTags->"Info3551005651-5753690"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Random", "[", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", "1"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.551010601769479*^9, 3.5510106068025208`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Random", "::", "randt"}], "MessageName"], ":", 
+  " ", "\<\"Type specification \[NoBreak]\\!\\({0, 1}\\)\[NoBreak] in \
+\[NoBreak]\\!\\(Random[\\(\\({0, 1}\\)\\)]\\)\[NoBreak] should be Real, \
+Integer, or Complex. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Random/randt\\\", ButtonNote -> \
+\\\"Random::randt\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.551010607329548*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Random", "[", 
+  RowBox[{"Real", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.551010611464554*^9, 3.551010613379556*^9}}],
+
+Cell[BoxData["0.8175531415835758`"], "Output",
+ CellChangeTimes->{3.5510106136395564`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Dividers"}]], "Input",
+ CellChangeTimes->{{3.551021126534435*^9, 3.551021160005349*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"Dividers is an option for Grid and related constructs that \
+specifies where and how to draw divider lines.\"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Dividers"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5510211603613696`*^9},
+ CellTags->"Info3551006760-3289220"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Manipulate"}]], "Input",
+ CellChangeTimes->{{3.5510124649056797`*^9, 3.551012466745682*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) generates \
+a version of \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) with controls \
+added to allow interactive manipulation of the value of \
+\\!\\(\\*StyleBox[\\\"u\\\", \\\"TI\\\"]\\). \
+\\n\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"du\\\", \
+\\\"TI\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) allows the value of \
+\\!\\(\\*StyleBox[\\\"u\\\", \\\"TI\\\"]\\) to vary between \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]]\\) and \\!\\(\\*SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]\\) in steps \\!\\(\\*StyleBox[\\\"du\\\", \
+\\\"TI\\\"]\\). \\n\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \
+\\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"init\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) takes the initial value of \
+\\!\\(\\*StyleBox[\\\"u\\\", \\\"TI\\\"]\\) to be \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"init\\\", \
+\\\"TI\\\"]]\\). \\n\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \
+\\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"init\\\", \\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\
+\", \\\"TI\\\"], StyleBox[\\\"lbl\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \
+\\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\\) labels the controls for \\!\\(\\*StyleBox[\\\"u\\\", \
+\\\"TI\\\"]\\) with \\!\\(\\*SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"lbl\\\", \\\"TI\\\"]]\\). \
+\\n\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) allows \
+\\!\\(\\*StyleBox[\\\"u\\\", \\\"TI\\\"]\\) to take on discrete values \\!\\(\
+\\*RowBox[{SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}]\\). \\n\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\
+\\\"{\\\", RowBox[{StyleBox[\\\"v\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) provides controls to \
+manipulate each of the \\!\\(\\*RowBox[{StyleBox[\\\"u\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"v\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}]\\). \\n\\!\\(\\*RowBox[{\\\"Manipulate\\\", \\\
+\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"c\\\", \\\"TI\\\"], StyleBox[\\\"u\\\", \
+\\\"TI\\\"]], \\\"->\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"u\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\",\\\", RowBox[{SubscriptBox[StyleBox[\\\"c\\\", \
+\\\"TI\\\"], StyleBox[\\\"v\\\", \\\"TI\\\"]], \\\"->\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"v\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\",\\\", \
+StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) links the \
+controls to the specified controllers on an external device.\"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Manipulate"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.551012467315683*^9},
+ CellTags->"Info3550998067-6068237"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Row"}]], "Input",
+ CellChangeTimes->{{3.5510127992563295`*^9, 3.551012800776332*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Row\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\"]\\\"}]\\) is an object that formats with the \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\\) arranged in a row, potentially extending over several lines. \
+\\n\\!\\(\\*RowBox[{\\\"Row\\\", \\\"[\\\", RowBox[{StyleBox[\\\"list\\\", \\\
+\"TI\\\"], \\\",\\\", StyleBox[\\\"s\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \
+inserts \\!\\(\\*StyleBox[\\\"s\\\", \\\"TI\\\"]\\) as a separator between \
+successive elements. \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Row"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5510128013763323`*^9},
+ CellTags->"Info3550998401-9493809"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Column"}]], "Input",
+ CellChangeTimes->{{3.55102043846908*^9, 3.551020440151176*^9}, {
+  3.5510212622351966`*^9, 3.5510212654843826`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"Column\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\"]\\\"}]\) is an object that formats with the \!\
+\(\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\) arranged in a column, with \
+\!\(\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \\\
+\"TR\\\"]]\) above \!\(\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]]\), etc. \\n\!\(\*RowBox[{\\\"Column\\\", \
+\\\"[\\\", RowBox[{StyleBox[\\\"list\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\
+\"alignment\\\", \\\"TI\\\"]}], \\\"]\\\"}]\) aligns each element \
+horizontally in the specified way. \\n\!\(\*RowBox[{\\\"Column\\\", \
+\\\"[\\\", RowBox[{StyleBox[\\\"list\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\
+\"alignment\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"spacing\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\) leaves the specified number of \!\(\*StyleBox[\\\
+\"x\\\", \\\"TI\\\"]\)-heights of spacing between successive elements.\"\>", 
+   "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Column"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.551021266162421*^9},
+ CellTags->"Info3551006866-3122316"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Text", "[", 
+  RowBox[{
+   RowBox[{"\"\<abalksdg;vlakdjg;adjg\>\"", "/", "n"}], 
+   "\"\<akjslkfja;sdlfjasdf\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.551020459138262*^9, 3.551020479020399*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[Cell[BoxData[
+   FractionBox[
+    RowBox[{"\<\"abalksdg;vlakdjg;adjg\"\>", 
+     " ", "\<\"akjslkfja;sdlfjasdf\"\>"}], "n"]], "Text", "TR"],
+  Text["abalksdg;vlakdjg;adjg" 
+   "akjslkfja;sdlfjasdf"/$CellContext`n]]], "Output",
+ CellChangeTimes->{3.5510204794644246`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Row", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Column", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}], "]"}], ",", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}], "]"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5510218912311735`*^9, 3.5510219002436886`*^9}, {
+  3.5510220306361465`*^9, 3.5510221009141665`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{TagBox[
+    GridBox[{{
+       RowBox[{"{", 
+         RowBox[{"1", ",", "2", ",", "3"}], "}"}]}, {
+       RowBox[{"{", 
+         RowBox[{"4", ",", "5", ",", "6"}], "}"}]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+     GridBoxItemSize -> {
+      "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"],TagBox[
+    GridBox[{{
+       RowBox[{"{", 
+         RowBox[{"1", ",", "2", ",", "3"}], "}"}]}, {
+       RowBox[{"{", 
+         RowBox[{"4", ",", "5", ",", "6"}], "}"}]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+     GridBoxItemSize -> {
+      "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]},
+  "Row",
+  DisplayFunction->(RowBox[{#, "\[InvisibleSpace]", #2}]& ),
+  InterpretationFunction->(RowBox[{"Row", "[", 
+     RowBox[{"{", 
+       RowBox[{#, ",", #2}], "}"}], "]"}]& )]], "Output",
+ CellChangeTimes->{
+  3.5510219006487117`*^9, {3.5510220393216434`*^9, 3.551022101402194*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Column", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Column", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}], ",", 
+      RowBox[{"Alignment", "\[Rule]", " ", "Right"}]}], "]"}], ",", 
+    RowBox[{"Column", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}], ",", 
+      RowBox[{"Alignment", "\[Rule]", " ", "Left"}]}], "]"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.551022128513745*^9, 3.551022254641959*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2", ",", "3"}], "}"}]},
+        {
+         RowBox[{"{", 
+          RowBox[{"4", ",", "5", ",", "6"}], "}"}]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Right}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]},
+    {
+     TagBox[GridBox[{
+        {
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2", ",", "3"}], "}"}]},
+        {
+         RowBox[{"{", 
+          RowBox[{"4", ",", "5", ",", "6"}], "}"}]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{{3.5510221435636053`*^9, 3.5510221755464354`*^9}, {
+  3.551022207686273*^9, 3.5510222550629835`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Button"}]], "Input",
+ CellChangeTimes->{{3.5510227533324823`*^9, 3.5510227557326193`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Button\\\", \\\"[\\\", RowBox[{StyleBox[\
+\\\"label\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"action\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) represents a button that is labeled with \\!\\(\
+\\*StyleBox[\\\"label\\\", \\\"TI\\\"]\\), and evaluates \\!\\(\\*StyleBox[\\\
+\"action\\\", \\\"TI\\\"]\\) whenever it is clicked. \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Button"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5510227562906513`*^9},
+ CellTags->"Info3551008356-7809542"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Column", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+    "\"\<duration of simulation [days]\>\"", ",", "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Days", ",", "7", ",", "\"\<\>\""}], "}"}], ",", "1", ",", 
+        "21", ",", "1", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<city population\>\"", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"TotalPop", ",", "10", ",", "\"\<\>\""}], "}"}], ",", "1", 
+        ",", "100", ",", "1", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<initial infected cases, City A\>\"", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"InfectedA", ",", "1", ",", "\"\<\>\""}], "}"}], ",", "0", 
+        ",", "TotalPop", ",", "1", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<initial infected cases, City B\>\"", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"InfectedB", ",", "1", ",", "\"\<\>\""}], "}"}], ",", "0", 
+        ",", "TotalPop", ",", "1", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<travellers/day\>\"", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Transfer", ",", "0", ",", "\"\<\>\""}], "}"}], ",", "0", 
+        ",", "TotalPop", ",", "1", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<chance of infection on contact\>\"", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Infectious", ",", ".1", ",", "\"\<\>\""}], "}"}], ",", "0", 
+        ",", "1", ",", ".01", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<latency before contagious state [days]\>\"", 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Incubation", ",", "3", ",", "\"\<\>\""}], "}"}], ",", "1", 
+        ",", "7", ",", "1", ",", "Slider"}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\"\<duration of contagious state [days]\>\"", 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"Control", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Recovery", ",", "3", ",", "\"\<\>\""}], "}"}], ",", "1", 
+        ",", "7", ",", "1", ",", "Slider"}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "Left", ",", ".45", ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5510240545599084`*^9, 3.551024074831068*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"duration of simulation [days]\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`Days, 7, ""}, 1, 21, 1, Slider}, 
+         Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"city population\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`TotalPop, 10, ""}, 1, 100, 1, 
+          Slider}, Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"initial infected cases, City A\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`InfectedA, 1, ""}, 
+          0, $CellContext`TotalPop, 1, Slider}, Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"initial infected cases, City B\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`InfectedB, 1, ""}, 
+          0, $CellContext`TotalPop, 1, Slider}, Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"travellers/day\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`Transfer, 0, ""}, 
+          0, $CellContext`TotalPop, 1, Slider}, Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"chance of infection on contact\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`Infectious, 0.1, ""}, 0, 1, 0.01, 
+          Slider}, Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"latency before contagious state [days]\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`Incubation, 3, ""}, 1, 7, 1, 
+          Slider}, Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]},
+    {"\<\"duration of contagious state [days]\"\>"},
+    {
+     TagBox[
+      DynamicBox[ToBoxes[
+        Manipulate`Control[{{$CellContext`Recovery, 3, ""}, 1, 7, 1, Slider}, 
+         Automatic], StandardForm],
+       ImageSizeCache->{300.399998188019, {6., 14.}}],
+      "Control"]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0.45}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.5510239972456303`*^9, 3.551024075472104*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Grid"}]], "Input",
+ CellChangeTimes->{{3.5510247486766095`*^9, 3.551024749544659*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Grid\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\
+\\\"], StyleBox[\\\"11\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\
+\"expr\\\", \\\"TI\\\"], StyleBox[\\\"12\\\", \\\"TR\\\"]], \\\",\\\", \
+StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\
+\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], StyleBox[\
+\\\"21\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"expr\\\", \
+\\\"TI\\\"], StyleBox[\\\"22\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\"]\\\"}]\\) is an object that \
+formats with the \\!\\(\\*SubscriptBox[StyleBox[\\\"expr\\\", \\\"TI\\\"], \
+StyleBox[\\\"ij\\\", \\\"TI\\\"]]\\) arranged in a two-dimensional grid. \
+\"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Grid"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5510247500886903`*^9},
+ CellTags->"Info3551010349-6889389"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Pops"], "Input",
+ CellChangeTimes->{{3.5510248766709304`*^9, 3.5510248769859486`*^9}}],
+
+Cell[BoxData["Pops"], "Output",
+ CellChangeTimes->{3.5510248774209733`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"{", "4", "}"}], ",", 
+     RowBox[{"{", "7", "}"}]}], "]"}], ",", 
+   RowBox[{"Spacings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"10", ",", "20"}], "}"}], ",", "0"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5510249305610127`*^9, 3.5510249501221313`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"x", "x", "x", "x", "x", "x", "x"},
+    {"x", "x", "x", "x", "x", "x", "x"},
+    {"x", "x", "x", "x", "x", "x", "x"},
+    {"x", "x", "x", "x", "x", "x", "x"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {10, 20}, "Rows" -> {{0}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.551024928496895*^9, 3.55102495061016*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<\>\"", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<\>\"", ",", "4", ",", "5"}], "}"}]}], "}"}], ",", 
+   RowBox[{"Spacings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"10", ",", "100"}], "}"}], ",", "0"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.551024963192879*^9, 3.5510250025551305`*^9}, {
+  3.5510251028868694`*^9, 3.5510251282333193`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\"\>", "2", "3"},
+    {"\<\"\"\>", "4", "5"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {10, 100}, "Rows" -> {{0}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.5510249738764906`*^9, 3.551025003018157*^9}, {
+  3.5510251050899954`*^9, 3.5510251286773443`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification->1.100000023841858,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3551009467-5291587"->{
+  Cell[84987, 1771, 1582, 26, 88, "Print",
+   CellTags->"Info3551009467-5291587"]},
+ "Info3551005651-5753690"->{
+  Cell[86779, 1807, 1137, 20, 88, "Print",
+   CellTags->"Info3551005651-5753690"]},
+ "Info3551006760-3289220"->{
+  Cell[89138, 1870, 425, 11, 47, "Print",
+   CellTags->"Info3551006760-3289220"]},
+ "Info3550998067-6068237"->{
+  Cell[89724, 1890, 5338, 81, 168, "Print",
+   CellTags->"Info3550998067-6068237"]},
+ "Info3550998401-9493809"->{
+  Cell[95216, 1980, 1094, 19, 68, "Print",
+   CellTags->"Info3550998401-9493809"]},
+ "Info3551006866-3122316"->{
+  Cell[96517, 2009, 1554, 26, 88, "Print",
+   CellTags->"Info3551006866-3122316"]},
+ "Info3551008356-7809542"->{
+  Cell[102310, 2175, 656, 14, 47, "Print",
+   CellTags->"Info3551008356-7809542"]},
+ "Info3551010349-6889389"->{
+  Cell[108807, 2347, 1215, 21, 50, "Print",
+   CellTags->"Info3551010349-6889389"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3551009467-5291587", 112494, 2456},
+ {"Info3551005651-5753690", 112607, 2459},
+ {"Info3551006760-3289220", 112720, 2462},
+ {"Info3550998067-6068237", 112832, 2465},
+ {"Info3550998401-9493809", 112946, 2468},
+ {"Info3551006866-3122316", 113059, 2471},
+ {"Info3551008356-7809542", 113172, 2474},
+ {"Info3551010349-6889389", 113285, 2477}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 921, 18, 93, "Input"],
+Cell[CellGroupData[{
+Cell[1503, 42, 56515, 1187, 4273, "Input"],
+Cell[58021, 1231, 26638, 525, 497, "Output"]
+}, Open  ]],
+Cell[84674, 1759, 96, 1, 32, "Input"],
+Cell[84773, 1762, 69, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[84867, 1767, 117, 2, 32, "Input"],
+Cell[84987, 1771, 1582, 26, 88, "Print",
+ CellTags->"Info3551009467-5291587"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[86606, 1802, 170, 3, 32, "Input"],
+Cell[86779, 1807, 1137, 20, 88, "Print",
+ CellTags->"Info3551005651-5753690"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87953, 1832, 174, 4, 32, "Input"],
+Cell[88130, 1838, 521, 10, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88688, 1853, 200, 5, 32, "Input"],
+Cell[88891, 1860, 90, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89018, 1866, 117, 2, 32, "Input"],
+Cell[89138, 1870, 425, 11, 47, "Print",
+ CellTags->"Info3551006760-3289220"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89600, 1886, 121, 2, 32, "Input"],
+Cell[89724, 1890, 5338, 81, 168, "Print",
+ CellTags->"Info3550998067-6068237"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[95099, 1976, 114, 2, 32, "Input"],
+Cell[95216, 1980, 1094, 19, 68, "Print",
+ CellTags->"Info3550998401-9493809"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96347, 2004, 167, 3, 32, "Input"],
+Cell[96517, 2009, 1554, 26, 88, "Print",
+ CellTags->"Info3551006866-3122316"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98108, 2040, 223, 5, 32, "Input"],
+Cell[98334, 2047, 303, 7, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98674, 2059, 673, 20, 32, "Input"],
+Cell[99350, 2081, 961, 24, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100348, 2110, 782, 23, 32, "Input"],
+Cell[101133, 2135, 1018, 31, 73, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102188, 2171, 119, 2, 32, "Input"],
+Cell[102310, 2175, 656, 14, 47, "Print",
+ CellTags->"Info3551008356-7809542"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103003, 2194, 2945, 70, 373, "Input"],
+Cell[105951, 2266, 2701, 72, 356, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108689, 2343, 115, 2, 32, "Input"],
+Cell[108807, 2347, 1215, 21, 50, "Print",
+ CellTags->"Info3551010349-6889389"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110059, 2373, 100, 1, 32, "Input"],
+Cell[110162, 2376, 75, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110274, 2382, 418, 13, 32, "Input"],
+Cell[110695, 2397, 447, 11, 58, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111179, 2413, 539, 16, 32, "Input"],
+Cell[111721, 2431, 396, 10, 38, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
